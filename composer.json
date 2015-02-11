@@ -1,0 +1,46 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"type": "project",
+	"require": {
+		"laravel/framework": "4.2.*",
+		"zizaco/confide": "~4.0@dev",
+		"zizaco/entrust": "1.2.*@dev",
+		"bllim/datatables": "*"
+	},
+	"require-dev": {
+		"barryvdh/laravel-debugbar": "1.8.*@dev"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds"
+		]
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize",
+			"php artisan config:publish bllim/datatables",
+			"php artisan config:publish barryvdh/laravel-debugbar"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize",
+			"php artisan config:publish bllim/datatables",
+			"php artisan config:publish barryvdh/laravel-debugbar"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}
