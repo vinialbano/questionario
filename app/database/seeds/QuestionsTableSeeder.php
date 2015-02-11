@@ -10,6 +10,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Sexo:';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "apresentacao";
         $question->save();
 
         $a = Alternative::where('text','=','Masculino')->first()->id;
@@ -21,13 +23,19 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Quantos anos você tem?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text = "Adicionar idade";
+        $question->scene = "apresentacao";
         $question->save();
-        
+
 
         $question = new Question;
         $question->text         = 'Com quem você mora?';
         $question->display_text = '';
         $question->multianswer  = true;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar outros";
+        $question->scene = "apresentacao";
         $question->save();
 
         $a = Alternative::where('text','=','Pai')->first()->id;
@@ -43,6 +51,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Seus pais:';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar outros";
+        $question->scene = "apresentacao";
         $question->save();
 
         $a = Alternative::where('text','=','Vivem juntos')->first()->id;
@@ -56,6 +67,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, quantos dias você faltou a alguma aula sem autorização dos seus pais ou responsáveis?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena1";
         $question->save();
 
         $a = Alternative::where('text','=','Não faltei')->first()->id;

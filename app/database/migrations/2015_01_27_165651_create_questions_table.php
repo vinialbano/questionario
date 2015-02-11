@@ -18,6 +18,9 @@ class CreateQuestionsTable extends Migration {
 			$table->string('text');
 			$table->string('display_text');
 			$table->boolean('multianswer');
+			$table->boolean('allow_other');
+			$table->string('other_text')->nullable();
+			$table->string('scene');
 			$table->timestamps();
 
 		});
