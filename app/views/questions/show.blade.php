@@ -10,20 +10,17 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="jumbotron">
                 <div class="jumbotron-photo">
-                    {{ HTML::image('production/images/cena1.png', 'Cena 1', array('class' => 'center-block')) }}
+                    {{ HTML::image('production/images/cena' . $question->scene . '.png', 'Cena 1', array('class' => 'center-block')) }}
                 </div>
                 <div class="jumbotron-contents">
-                    <h2 class='text-center'>{{ isset($question->display_text) && $question->display_text != "" ? $question->display_text : $question->text }}</h2>
-                    <div id="multianswer" hidden>
-                        {{ $question->multianswer }}
-                    </div>
+                    <h2 class='text-center'>{{ $question->display_text != "" ? $question->display_text : $question->text }}</h2>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Opções</h3>
                                 </div>
-                                <div id="origem" class="list-group" style="padding: 10px 0">
+                                <div id="origem" class="list-group">
                                     @foreach($question->alternatives()->get() as $alternative)
                                     <a class="list-group-item">{{ $alternative->text }}</a>
                                     @endforeach
@@ -32,7 +29,7 @@
                                 @if($question->allow_other)
                                 <a href="{{{ URL::route('questions.modal') }}}" id="adicionar" class="btn btn-primary btn-block ajax-popup-link">{{ $question->other_text }}</a>
                                 @endif
-                                
+
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -40,11 +37,15 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Resposta</h3>
                                 </div>
-                                <div id="destino" class="list-group" style="padding: 10px 0"></div>
+                                <div id="destino" class="list-group"></div>
                             </div>
                         </div>
                     </div>
-
+                    @if($question->next() != null)
+                    <a href="{{{URL::route('questions.show', $question->next()->id)}}}" class="btn btn-primary">Próximo</a>
+                    @else
+                    <a href="{{{URL::route('questions.show', 1)}}}" class="btn btn-primary">Próximo</a>
+                    @endif
                 </div>
             </div>
         </div>

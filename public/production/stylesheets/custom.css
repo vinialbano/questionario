@@ -116,4 +116,8 @@ body {
   width: 200px;
 }
 
+#origem, #destino {
+  padding: 10px 0;
+}
+
 /*# sourceMappingURL=custom.css.map */

@@ -20,7 +20,7 @@ class CreateQuestionsTable extends Migration {
 			$table->boolean('multianswer');
 			$table->boolean('allow_other');
 			$table->string('other_text')->nullable();
-			$table->string('scene');
+			$table->integer('scene')->unsigned();
 			$table->timestamps();
 
 		});

@@ -11,7 +11,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena1";
+        $question->scene = 1;
         $question->save();
 
         $a = Alternative::where('text','=','Masculino')->first()->id;
@@ -25,7 +25,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text = "Adicionar idade";
-        $question->scene = "cena1";
+        $question->scene = 1;
         $question->save();
 
 
@@ -35,7 +35,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = true;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outros";
-        $question->scene = "cena2";
+        $question->scene = 2;
         $question->save();
 
         $a = Alternative::where('text','=','Pai')->first()->id;
@@ -53,7 +53,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outros";
-        $question->scene = "cena2";
+        $question->scene = 2;
         $question->save();
 
         $a = Alternative::where('text','=','Vivem juntos')->first()->id;
@@ -68,7 +68,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Não faltei')->first()->id;
@@ -83,7 +83,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -97,7 +97,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text = "Adicionar idade";
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -110,7 +110,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -123,7 +123,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -138,7 +138,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -152,7 +152,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena3";
+        $question->scene = 3;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -167,7 +167,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -180,7 +180,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -194,7 +194,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -207,7 +207,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -220,7 +220,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
@@ -235,7 +235,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text = "Adicionar idade";
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca fumei')->first()->id;
@@ -248,7 +248,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Não fumo')->first()->id;
@@ -263,7 +263,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena4";
+        $question->scene = 4;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -276,7 +276,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -289,7 +289,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -302,7 +302,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -318,7 +318,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outro";
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não cheirei')->first()->id;
@@ -337,7 +337,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
@@ -350,7 +350,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
@@ -365,7 +365,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
@@ -380,7 +380,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena5";
+        $question->scene = 5;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -393,7 +393,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena5";
+        $question->scene = 5;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -406,7 +406,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena5";
+        $question->scene = 5;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -422,7 +422,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena5";
+        $question->scene = 5;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
@@ -435,7 +435,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena5";
+        $question->scene = 5;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca fumei')->first()->id;
@@ -451,7 +451,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar remédio";
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -463,7 +463,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -476,7 +476,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -492,7 +492,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -505,7 +505,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -521,7 +521,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar tranquilizante";
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -533,7 +533,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -546,7 +546,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -562,7 +562,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -575,7 +575,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena6";
+        $question->scene = 6;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -588,7 +588,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena6";
+        $question->scene = 6;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -601,7 +601,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena6";
+        $question->scene = 6;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -617,7 +617,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena6";
+        $question->scene = 6;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
@@ -630,7 +630,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena6";
+        $question->scene = 6;
         $question->save();
 
         $a = Alternative::where('text','=','Mais de um ano')->first()->id;
@@ -645,7 +645,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena8";
+        $question->scene = 8;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -659,7 +659,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena8";
+        $question->scene = 8;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -672,7 +672,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena8";
+        $question->scene = 8;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -688,7 +688,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena8";
+        $question->scene = 8;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
@@ -701,7 +701,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena8";
+        $question->scene = 8;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca usei')->first()->id;
@@ -716,7 +716,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena7";
+        $question->scene = 7;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -732,7 +732,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena7";
+        $question->scene = 7;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -745,7 +745,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena7";
+        $question->scene = 7;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -761,7 +761,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar idade";
-        $question->scene = "cena7";
+        $question->scene = 7;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -774,7 +774,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -788,7 +788,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -809,7 +809,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -823,7 +823,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -836,7 +836,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -849,7 +849,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena10";
+        $question->scene = 10;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -871,7 +871,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text = "Adicionar droga";
-        $question->scene = "cena9";
+        $question->scene = 9;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -883,7 +883,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca estudou')->first()->id;
@@ -904,7 +904,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -917,7 +917,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -930,7 +930,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -943,7 +943,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -956,7 +956,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -969,7 +969,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -982,7 +982,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -995,7 +995,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1008,7 +1008,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1021,7 +1021,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar quantidade";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1034,7 +1034,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = true;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outros";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1054,7 +1054,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = true;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outros";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Nada')->first()->id;
@@ -1073,7 +1073,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Nenhuma')->first()->id;
@@ -1089,7 +1089,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não sei')->first()->id;
@@ -1107,7 +1107,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar medida";
-        $question->scene = "cena11";
+        $question->scene = 11;
         $question->save();
 
         $a = Alternative::where('text','=','Não sei')->first()->id;
