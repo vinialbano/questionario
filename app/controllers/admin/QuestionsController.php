@@ -7,6 +7,7 @@ use View;
 use Datatables;
 use Input;
 use Redirect;
+use Request;
 
 class QuestionsController extends BaseController {
 
@@ -41,10 +42,10 @@ class QuestionsController extends BaseController {
 	{
 		if(Request::ajax()) {
 			// Title
-			$title = Lang::get('admin/questions/title.update_question');
+			$title = Lang::get('admin/questions/title.question_update');
 
 			// Show the page
-			return View::make('layouts/admin/modal', compact('question', 'title'));
+			return View::make('questions/edit', compact('question', 'title'));
 		}
 		return Redirect::to('/');
 	}
@@ -61,6 +62,8 @@ class QuestionsController extends BaseController {
 		$question->text       = Input::get('text');
 		$question->display_text = Input::get('display_text');
 		$question->multianswer    = Input::has('multianswer') ? true : false;
+		$question->allow_other    = Input::has('allow_other') ? true : false;
+		$question->other_text = Input::get('other_text');
 
 		// Was the question updated?
 		if($question->save())
@@ -75,7 +78,7 @@ class QuestionsController extends BaseController {
 
 	public function getData()
 	{
-		$questions = Question::select(array('id', 'text', 'display_text', 'multianswer'));
+		$questions = Question::select(array('id', 'text', 'display_text', 'multianswer', 'allow_other', 'other_text'));
 
 		return Datatables::of($questions)
 		->add_column('actions', '
@@ -84,6 +87,7 @@ class QuestionsController extends BaseController {
 		</div>
 		')
 		->edit_column('multianswer', '{{ $multianswer ? "Sim" : "Não" }}')
+		->edit_column('allow_other', '{{ $allow_other ? "Sim" : "Não" }}')
 		->make();
 	}
 

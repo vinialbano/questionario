@@ -92,5 +92,9 @@ class QuestionsController extends \BaseController {
 		//
 	}
 
+	public function getModal(){
+		return View::make('questions/modal');
+	}
+
 
 }

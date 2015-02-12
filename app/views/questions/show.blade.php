@@ -28,6 +28,11 @@
                                     <a class="list-group-item">{{ $alternative->text }}</a>
                                     @endforeach
                                 </div>
+
+                                @if($question->allow_other)
+                                <a href="{{{ URL::route('questions.modal') }}}" id="adicionar" class="btn btn-primary btn-block ajax-popup-link">{{ $question->other_text }}</a>
+                                @endif
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -48,18 +53,26 @@
 @stop
 
 @section('scripts')
-<script>
+<script type="text/javascript">
+
+$('.ajax-popup-link').magnificPopup({
+    type: 'ajax',
+    modal: 'true'
+
+    // other options
+});
+
 var multianswer = {{ $question->multianswer }};
 
 // Origem
-var origemSort = Sortable.create(origem, {
+Sortable.create(origem, {
     group: {
         name:"origem",
         put: "destino"
     }
 });
 // Destino
-var sortable = Sortable.create(destino, {
+Sortable.create(destino, {
     group: {
         name: "destino",
         put: "origem"
@@ -73,11 +86,5 @@ var sortable = Sortable.create(destino, {
         this.options.group.put = "origem";
     }
 });
-
-troca = function(){
-
-
-    alert($("#destino").children().length);
-}
 </script>
 @stop

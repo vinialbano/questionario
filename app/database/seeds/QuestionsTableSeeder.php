@@ -11,7 +11,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "apresentacao";
+        $question->scene = "cena1";
         $question->save();
 
         $a = Alternative::where('text','=','Masculino')->first()->id;
@@ -25,7 +25,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text = "Adicionar idade";
-        $question->scene = "apresentacao";
+        $question->scene = "cena1";
         $question->save();
 
 
@@ -35,7 +35,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = true;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outros";
-        $question->scene = "apresentacao";
+        $question->scene = "cena2";
         $question->save();
 
         $a = Alternative::where('text','=','Pai')->first()->id;
@@ -53,7 +53,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text  = "Adicionar outros";
-        $question->scene = "apresentacao";
+        $question->scene = "cena2";
         $question->save();
 
         $a = Alternative::where('text','=','Vivem juntos')->first()->id;
@@ -68,7 +68,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = "cena1";
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Não faltei')->first()->id;
@@ -82,6 +82,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já experimentou alguma bebida alcoólica? Exemplos: cerveja, chopp, vinho, pinga, caipirinha, aperitivos, sidra, outras.';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -93,6 +95,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando tomou bebida alcoólica pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text = "Adicionar idade";
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -104,6 +109,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou alguma bebida alcoólica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -115,6 +122,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você tomou alguma bebida alcoólica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -128,6 +137,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já comprou pessoalmente alguma bebida alcoólica (mesmo que não tenha sido para você)?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -140,6 +151,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Quando foi a primeira vez que você tomou bebida alcoólica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena3";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -153,6 +166,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou alguma bebida energética? Exemplos: Red Bull, Flash Power, Flying Horse, Bad Boy, Blue Energy, Burn.';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -164,6 +179,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Se você já tomou alguma bebida energética, alguma vez foi misturada com álcool?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -176,6 +193,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já fumou cigarro?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -187,6 +206,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você fumou algum cigarro?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -198,6 +219,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você fumou algum cigarro?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
@@ -210,6 +233,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando fumou cigarro pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text = "Adicionar idade";
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca fumei')->first()->id;
@@ -221,6 +247,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Se você fuma, quanto cigarros você fuma por dia?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Não fumo')->first()->id;
@@ -234,6 +262,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já fumou em narguile (narguilê, arguile, nargas)?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena4";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -245,6 +275,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você ja cheirou algum produto para se sentir "alterado/diferente"? Exemplos: loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás, tinta. (Não vale cocaína)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -256,6 +288,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você cheirou algum produto para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -267,6 +301,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você cheirou algum produto para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -280,6 +316,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Se você já cheirou algum produto para se sentir "alterado/diferente", qual você cheirou por último?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar outro";
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não cheirei')->first()->id;
@@ -296,6 +335,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando cheirou algum desses produtos para se sentir "alterado/diferente" pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
@@ -307,6 +349,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Quando foi a primeira vez que você cheirou algum produto para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
@@ -320,6 +364,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Se você cheirou algum desses produtos, na última vez que cheirou, onde você os conseguiu?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
@@ -333,6 +379,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Já experimentou maconha (ou haxixe)?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena5";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -344,6 +392,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você usou maconha?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena5";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -355,6 +405,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você usou maconha?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena5";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -368,6 +420,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando experimentou maconha pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena5";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
@@ -379,6 +434,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Quando foi a primeira vez que você fumou maconha?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena5";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca fumei')->first()->id;
@@ -392,6 +449,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica? Exemplos: Anfepramona, Femproporex, Mazindol, Hipofagin, Inibex, Desobesi, Moderine, Absten, Fagolipo, Dualid. (Não vale adoçante, shake, nem chá)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar remédio";
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -402,6 +462,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -413,6 +475,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos ultimos 30 dias, você tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -426,6 +490,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -437,6 +504,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou Holoten, Carpinol ou Medavane para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -450,6 +519,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou algum tranquilizante (calmante) sem receita médica? Exemplos: Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. (Não vale chás, nem produtos naturais como Maracugina)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar tranquilizante";
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -460,6 +532,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou algum tranquilizante (calmante) sem receita médica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -471,6 +545,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você tomou algum tranquilizante (calmante) sem receita médica?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -484,6 +560,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando tomou algum tranquilizante (calmante) sem receita médica pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -495,6 +574,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já experimentou cocaína?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena6";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -506,6 +587,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você usou cocaína?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena6";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -517,6 +600,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você usou cocaína?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena6";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -530,6 +615,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando experimentou cocaína pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena6";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
@@ -541,6 +629,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Quando foi a primeira vez que você cheirou cocaína?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena6";
         $question->save();
 
         $a = Alternative::where('text','=','Mais de um ano')->first()->id;
@@ -554,6 +644,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já experimentou crack ou merla?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena8";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -566,6 +658,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você usou crack ou merla?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena8";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -577,6 +671,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você usou crack ou merla?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena8";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -590,6 +686,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Que idade você tinha quando experimentou crack ou merla pela primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena8";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
@@ -601,6 +700,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Quando foi a primeira vez que você usou crack ou merla?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena8";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca usei')->first()->id;
@@ -614,6 +715,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho) para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena7";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -628,6 +731,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho) para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena7";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -639,6 +744,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho) para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena7";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -652,6 +759,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Se você já tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho), que idade você tinha quando tomou para se sentir "alterado/diferente" primeira vez?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar idade";
+        $question->scene = "cena7";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -663,6 +773,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você ja experimentou heroína ou ópio?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -675,6 +787,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou algum dos remédios abaixo para se sentir "alterado/diferente"? Morfina, Tylex, Setux, Sylador, Tramal (Tramadol), Dolantina (Meperidina ou Petidina), Fentanil, Dolosal, Belacodid.';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -694,6 +808,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou LSD (ácido) ou chá de cogumelo?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -706,6 +822,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já experimentou êxtase?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -717,6 +835,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já usou Benflogin para se sentir "alterado/diferente"?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -728,6 +848,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já tomou algum medicamento anabolizante para aumentar sua musculatura ou para dar mais força? Exemplos: Anabolex, Androlone, Androviron, Decadurabolin, Durabolin, Durateston, Equipoise, Parabolan, Primobolan.';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena10";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -747,6 +869,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já ouviu falar de outras drogas não citadas neste questionário?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text = "Adicionar droga";
+        $question->scene = "cena9";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -757,6 +882,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Até que grau o chefe (responsável) de sua família estudou?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Nunca estudou')->first()->id;
@@ -775,6 +902,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem televisão em cores? (Não vale quebrada)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -785,6 +915,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem videocassete? (Não vale quebrado)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -795,6 +928,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem aparelho de DVD? (Não vale quebrado)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -805,6 +941,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem rádio? (Não vale quebrado)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -815,6 +954,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem banheiro?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -825,6 +967,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem automóvel? (Não vale moto)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -835,6 +980,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem algum empregado(a) que trabalhe todos os dias para sua família? Exemplo: doméstica, babá, motorista, jardineiro, etc.';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -845,6 +993,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem maquina de lavar (não vale tanquinho)? (Não vale quebrada)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -855,6 +1006,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem geladeira? (Não vale quebrada)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -865,6 +1019,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Na sua casa tem freezer (da geladeira ou independente)? (Não vale quebrado)';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar quantidade";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -875,6 +1032,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você já recebeu informações educativas sobre drogas?';
         $question->display_text = '';
         $question->multianswer  = true;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar outros";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -892,6 +1052,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Se você quisesse procurar alguma informação sobre drogas, o que você faria?';
         $question->display_text = '';
         $question->multianswer  = true;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar outros";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Nada')->first()->id;
@@ -909,6 +1072,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Com que intensidade você acredita que o seu futuro será melhor?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Nenhuma')->first()->id;
@@ -923,6 +1088,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você sabe se sua família recebe algum auxílio do governo, como por exemplo, bolsa família, bolsa escola, auxílio gás ou bolsa alimentação?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não sei')->first()->id;
@@ -938,6 +1105,9 @@ class QuestionsTableSeeder extends Seeder {
         $question->text         = 'Você ja foi obrigado a cumprir alguma medida sócio-educativa do governo, como por exemplo, liberdade assistida ou prestação de serviços à comunidade?';
         $question->display_text = '';
         $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text  = "Adicionar medida";
+        $question->scene = "cena11";
         $question->save();
 
         $a = Alternative::where('text','=','Não sei')->first()->id;

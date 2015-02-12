@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="bg-black">
 <head>
     <meta charset="UTF-8">
     <title>
@@ -10,7 +10,8 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Styles -->
-    @include('layouts.styles')
+    @include('layouts.questionnaire.styles')
+    @yield('styles')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,11 +20,11 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="bg-black">
 
     @yield('content')
 
-    @include('layouts.scripts')
+    @include('layouts.questionnaire.scripts')
     @yield('scripts')
 
 </body>

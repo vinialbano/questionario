@@ -86,10 +86,10 @@ Route::group(array('before' => 'guest'), function()
 
 	# Question Management
 	Route::group(array('prefix' => 'questions'), function(){
-		Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'admin.questions.index'));
-		Route::get('{question}/show', 		array('uses' => 'QuestionsController@show', 	'as' => 'admin.questions.show'));
-		Route::put('{question}', 			array('uses' => 'QuestionsController@update', 	'as' => 'admin.questions.update'));
-		Route::get('/data', 				array('uses' => 'QuestionsController@getData', 	'as' => 'admin.questions.data'));
+		Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'questions.index'));
+		Route::get('{question}/show', 		array('uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
+		Route::put('{question}', 			array('uses' => 'QuestionsController@update', 	'as' => 'questions.update'));
+		Route::get('/modal', 				array('uses' => 'QuestionsController@getModal', 'as' => 'questions.modal'));
 	});
 	Route::controller('questions', 'QuestionsController');
 

@@ -1,5 +1,9 @@
 @extends('layouts.questionnaire.master')
 
+@section('styles')
+{{ HTML::style('vendor/adminlte/css/AdminLTE.css') }}
+@stop
+
 @section('title')
 {{{ $title }}} :: @parent
 @stop
