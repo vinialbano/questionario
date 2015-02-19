@@ -13,6 +13,7 @@
     "jquery.inputmask": "~3.1.59",
     "datatables-plugins": "~1.0.1",
     "bootflatv2": "~2.0.4",
-    "Sortable": "~1.0.1"
+    "Sortable": "~1.0.1",
+    "textillate": "*"
   }
 }

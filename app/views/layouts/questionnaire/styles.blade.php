@@ -6,5 +6,8 @@
 {{ HTML::style('vendor/magnific-popup/dist/magnific-popup.css') }}
 <!-- Bootflat UI Theme style -->
 {{ HTML::style('vendor/bootflatv2/bootflat/css/bootflat.min.css') }}
+<!-- Textillate -->
+{{ HTML::style('vendor/textillate/assets/animate.css') }}
+{{-- HTML::style('vendor/textillate/assets/style.css') --}}
 <!-- Custom -->
-{{ HTML::style('production/stylesheets/custom.css')}}
+{{ HTML::style('production/stylesheets/custom.css') }}

@@ -3,6 +3,8 @@
 class Comment extends Eloquent
 {
 
+    protected $fillable = array('comment');
+
     public function getFormatedDate(){
         setLocale(LC_TIME, 'pt-BR');
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->updated_at)->formatLocalized('%e %b. %Y');

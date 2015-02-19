@@ -115,10 +115,6 @@ class AlternativesTableSeeder extends Seeder {
         $alternative->text = 'Um deles já morreu (ou os dois)';
         $alternative->save();
 
-        $alternative = new Alternative;
-        $alternative->text = 'Outros';
-        $alternative->save();
-
         //Questão 5
         $alternative = new Alternative;
         $alternative->text = 'Não faltei';

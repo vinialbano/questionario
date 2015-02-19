@@ -1,57 +1,73 @@
-<!DOCTYPE html>
-<html class="bg-black" lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Questionário Interativo</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+@extends('layouts.questionnaire.master')
 
-    <!-- Bootstrap 3.3.3 -->
-    {{ HTML::style('production/stylesheets/bootstrap.css') }}
-    <!-- Font Awesome 4.3.0 -->
-    {{ HTML::style('vendor/fontawesome/css/font-awesome.min.css') }}
-    <!-- Theme style -->
-    {{ HTML::style('vendor/adminlte/css/AdminLTE.css') }}
+@section('title')
+Home :: @parent
+@stop
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body class="bg-black">
+@section('content')
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
 
-    <div class="form-box" id="login-box">
-        <div class="header">Área Administrativa</div>
-        <form role="form"  method="post" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{{ URL::to('/')}}}">Questionário Interativo</a>
+        </div>
 
-            <div class="body bg-gray">
-                <div class="form-group">
-                    <input type="text" name="username" id="username" class="form-control" placeholder="Usuário"/>
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Senha"/>
-                </div>
-            </div>
-            @if (Session::get('error'))
-                <div class="alert alert-error alert-danger">{{{ Session::get('error') }}}</div>
-            @endif
-
-            @if (Session::get('notice'))
-                <div class="alert">{{{ Session::get('notice') }}}</div>
-            @endif
-            <div class="footer">
-                <button type="submit" class="btn bg-olive btn-block">Entrar</button>
-                <p><a href="#">Esqueci minha senha</a></p>
-            </div>
-        </form>
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="nav-link" href="{{ URL::route('admin.dashboard.index') }}">Login</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
+</nav>
 
-    <!-- JQuery 2.1.3 -->
-    {{ HTML::script('vendor/jquery/dist/jquery.min.js') }}
-    <!-- Bootstrap 3.3.3 -->
-    {{ HTML::script('vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js') }}
 
-</body>
-</html>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-8 col-md-offset-2 column">
+            <div class="jumbotron">
+                <div class="jumbotron-photo">
+                    {{ HTML::image('production/images/cena4.png', 'Cena 4', array('class' => 'center-block img-responsive')) }}
+                </div>
+                <div class="jumbotron-contents">
+                    <h1 class="text-center">Questionário Interativo</h1>
+                    <p>
+                        Esta é uma implementação do “Questionário sobre o uso de Drogas” para ponderar os problemas relacionados
+                        ao uso de álcool e outras drogas entre adolescentes de uma escola pública em um município do Sul de Minas Gerais.
+                    </p>
+                    <p>
+                        Este questionário é uma adaptação do instrumento proposto pela Organização Mundial de Saúde (OMS),
+                        desenvolvido pela WHO – Research and Reporting Project on the Epidemiology of Drug Dependence e validado no
+                        Brasil por Carlini-Cotrim et al e aplicado nos Levantamentos Nacionais realizados pelo CEBRID.
+                    </p>
+                    <div class="row">
+
+                        <div class="col-md-4 col-md-offset-4">
+                            <a href="{{{ URL::route('apresentacao') }}}" class="btn btn-success btn-lg">Responder Questionário</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@section('scripts')
+<script type="text/javascript">
+$("body").css("padding-top", "70px");
+</script>
+@stop

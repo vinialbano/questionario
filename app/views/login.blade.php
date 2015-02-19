@@ -5,7 +5,7 @@
 @stop
 
 @section('title')
-{{{ $title }}} :: @parent
+Login :: @parent
 @stop
 
 @section('content')
@@ -20,17 +20,17 @@
 			<div class="form-group">
 				<input type="password" name="password" id="password" class="form-control" placeholder="Senha"/>
 			</div>
-		</div>
-		@if (Session::get('error'))
-		<div class="alert alert-error alert-danger">{{{ Session::get('error') }}}</div>
-		@endif
+			@if (Session::get('error'))
+			<div class="alert alert-error alert-danger">{{{ Session::get('error') }}}</div>
+			@endif
 
-		@if (Session::get('notice'))
-		<div class="alert">{{{ Session::get('notice') }}}</div>
-		@endif
+			@if (Session::get('notice'))
+			<div class="alert">{{{ Session::get('notice') }}}</div>
+			@endif
+		</div>
+
 		<div class="footer">
 			<button type="submit" class="btn bg-olive btn-block">Entrar</button>
-			<p><a href="#">Esqueci minha senha</a></p>
 		</div>
 	</form>
 

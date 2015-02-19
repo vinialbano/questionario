@@ -10,38 +10,6 @@ class QuestionsController extends \BaseController {
 		$this->model = $question;
 	}
 
-	/**
-	* Display a listing of the resource.
-	*
-	* @return Response
-	*/
-	public function index()
-	{
-		//
-	}
-
-
-	/**
-	* Show the form for creating a new resource.
-	*
-	* @return Response
-	*/
-	public function create()
-	{
-		//
-	}
-
-
-	/**
-	* Store a newly created resource in storage.
-	*
-	* @return Response
-	*/
-	public function store()
-	{
-		//
-	}
-
 
 	/**
 	* Display the specified resource.
@@ -51,45 +19,30 @@ class QuestionsController extends \BaseController {
 	*/
 	public function show($question)
 	{
-		$title = "Questão";
+		$previous = $question->getPrevious();
+		$questions = Session::get('questions');
 
-		return View::make('questions/show', compact('title' , 'question'));
-	}
+		if ($previous != null){
+			$top = sizeof($questions) - 1;
+			$bottom = 0;
+			$achou = false;
+			$achou = false;
+			while($bottom <= $top)
+			{
+				if(in_array($previous->id, $questions[$bottom])) {
+					$achou = true;
+					break;
+				}
+				$bottom++;
+			}
+		}
 
+		if($previous == null || $achou){
+			$title = "Questão " . $question->id;
+			return View::make('questions/show', compact('title' , 'question'));
+		}
+		return Redirect::route('questions.show', $previous->id);
 
-	/**
-	* Show the form for editing the specified resource.
-	*
-	* @param  int  $question
-	* @return Response
-	*/
-	public function edit($question)
-	{
-		//
-	}
-
-
-	/**
-	* Update the specified resource in storage.
-	*
-	* @param  int  $question
-	* @return Response
-	*/
-	public function update($question)
-	{
-		//
-	}
-
-
-	/**
-	* Remove the specified resource from storage.
-	*
-	* @param  int  $question
-	* @return Response
-	*/
-	public function destroy($question)
-	{
-		//
 	}
 
 	public function getModal(){

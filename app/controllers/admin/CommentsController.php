@@ -31,9 +31,12 @@ class CommentsController extends BaseController {
 
 		//Dates
 		$dates = array();
+		setLocale(LC_TIME, 'pt-BR');
 		foreach ($comments as $key => $comment){
-			setLocale(LC_TIME, 'pt-BR');
-			$dates[$key] = Carbon::createFromFormat('Y-m-d H:i:s', $comment->updated_at)->formatLocalized('%e %b. %Y');
+			$newDate = Carbon::createFromFormat('Y-m-d H:i:s', $comment->updated_at)->formatLocalized('%e %b. %Y');
+			if(!in_array($newDate, $dates)){
+				array_push($dates, $newDate);
+			}
 		}
 
 		return View::make('comments.index', compact('comments','dates','title'));

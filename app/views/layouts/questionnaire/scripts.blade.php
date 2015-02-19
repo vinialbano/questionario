@@ -10,5 +10,9 @@
 {{-- HTML::script('vendor/bootflatv2/js/site.min.js') --}}
 <!-- Sortable -->
 {{ HTML::script('vendor/Sortable/Sortable.min.js') }}
+<!-- Textillate -->
+{{ HTML::script('vendor/textillate/assets/jquery.fittext.js') }}
+{{ HTML::script('vendor/textillate/assets/jquery.lettering.js') }}
+{{ HTML::script('vendor/textillate/jquery.textillate.js') }}
 <!-- Custom -->
 {{ HTML::script('development/javascripts/custom.js') }}

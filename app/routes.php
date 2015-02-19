@@ -37,75 +37,59 @@ Route::pattern('token', '[0-9a-z]+');
 */
 Route::group(array('prefix' => 'admin', 'before' => 'auth', 'namespace' => 'Admin'), function()
 {
-	# Comment Management
-	Route::group(array('prefix' => 'comments'), function(){
-		Route::get('/', 				array('uses' => 'CommentsController@index',		'as' => 'admin.comments.index'));
-	});
-	Route::controller('comments', 'CommentsController');
-
-	# Question Management
-	Route::group(array('prefix' => 'questions'), function(){
-		Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'admin.questions.index'));
-		Route::get('{question}/edit', 		array('uses' => 'QuestionsController@edit', 	'as' => 'admin.questions.edit'));
-		Route::put('{question}', 			array('uses' => 'QuestionsController@update', 	'as' => 'admin.questions.update'));
-		Route::get('/data', 				array('uses' => 'QuestionsController@getData', 	'as' => 'admin.questions.data'));
-	});
-	Route::controller('questions', 'QuestionsController');
-
-
 	# Answer Management
 	Route::group(array('prefix' => 'answers'), function(){
-		Route::get('/', 				array('uses' => 'AnswersController@index',		'as' => 'admin.answers.index'));
-		Route::get('/create', 			array('uses' => 'AnswersController@create',		'as' => 'admin.answers.create'));
-		Route::post('/', 				array('uses' => 'AnswersController@store', 		'as' => 'admin.answers.store'));
-		Route::get('{answer}/edit', 	array('uses' => 'AnswersController@edit', 		'as' => 'admin.answers.edit'));
-		Route::put('{answer}', 			array('uses' => 'AnswersController@update', 	'as' => 'admin.answers.update'));
-		Route::get('{answer}/destroy', 	array('uses' => 'AnswersController@destroy', 	'as' => 'admin.answers.destroy'));
-		Route::get('/data', 			array('uses' => 'AnswersController@getData', 	'as' => 'admin.answers.data'));
+		Route::get('/',	array('uses' => 'AnswersController@index',	'as' => 'admin.answers.index'));
 	});
-	Route::controller('answers', 'AnswersController');
+
+	# Comment Management
+	Route::group(array('prefix' => 'comments'), function(){
+		Route::get('/',	array('uses' => 'CommentsController@index',	'as' => 'admin.comments.index'));
+	});
+
+	# Question Management
+	Route::group(array('prefix' => 'questions'), function(){
+		Route::get('/', 				array('uses' => 'QuestionsController@index',	'as' => 'admin.questions.index'));
+		Route::get('{question}/edit',	array('uses' => 'QuestionsController@edit', 	'as' => 'admin.questions.edit'));
+		Route::put('{question}', 		array('uses' => 'QuestionsController@update', 	'as' => 'admin.questions.update'));
+		Route::get('/data', 			array('uses' => 'QuestionsController@getData',	'as' => 'admin.questions.data'));
+	});
 
 	# Admin Dashboard
-	Route::get('/', 				array('uses' => 'DashboardController@index',		'as' => 'admin.dashboard.index'));
+	Route::get('/',	array('uses' => 'DashboardController@index',	'as' => 'admin.dashboard.index'));
 
 	Route::controller('comments', 'CommentsController');
 
 });
 
-/** ------------------------------------------
-* 	Guest Routes
-*	------------------------------------------
-*/
-Route::group(array('before' => 'guest'), function()
-{
-	# Comments
-	Route::resource('comments', 'CommentsController', array('only' => array('create', 'store')));
 
-	# Answer
-	Route::resource('answers', 'AnswersController', array('only' => array('create', 'store')));
-
-	# Question Management
-	Route::group(array('prefix' => 'questions'), function(){
-		Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'questions.index'));
-		Route::get('{question}/show', 		array('uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
-		Route::put('{question}', 			array('uses' => 'QuestionsController@update', 	'as' => 'questions.update'));
-		Route::get('/modal', 				array('uses' => 'QuestionsController@getModal', 'as' => 'questions.modal'));
-	});
-	Route::controller('questions', 'QuestionsController');
-
+# Comments
+Route::group(array('prefix' => 'comments'), function(){
+	Route::get('/create', array('uses' => 'CommentsController@create', 'as' => 'comments.create'));
+	Route::post('/', array('uses' => 'CommentsController@store', 'as' => 'comments.store'));
 });
 
-/** -------------------------------------------
-* 	General Routes
-*	-------------------------------------------
-*/
+# Answers
+Route::group(array('prefix' => 'answers'), function(){
+	Route::post('/', array('uses' => 'AnswersController@store', 'as' => 'answers.store'));
+});
+
+# Alternatives
+Route::group(array('prefix' => 'alternatives'), function(){
+	Route::post('/', array('uses' => 'AlternativesController@firstOrNew', 'as' => 'alternatives.firstOrNew'));
+});
+
+# Questions
+Route::group(array('prefix' => 'questions'), function(){
+	Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'questions.index'));
+	Route::get('{question}/show', 		array('uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
+	Route::get('/modal', 				array('uses' => 'QuestionsController@getModal', 'as' => 'questions.modal'));
+});
 
 # Home
-Route::get('/', 'HomeController@getIndex');
+Route::get('/', array('uses' => 'HomeController@index', 'as' => 'index'));
+Route::get('/apresentacao', array('uses' => 'HomeController@apresentacao', 'as' => 'apresentacao'));
+Route::get('/finalizacao', array('uses' => 'HomeController@finalizacao', 'as' => 'finalizacao'));
 //
 
-// Confide RESTful route
-Route::get('users/confirm/{code}', 'UsersController@getConfirm');
-Route::get('users/reset_password/{token}', 'UsersController@getReset');
-Route::get('users/reset_password', 'UsersController@postReset');
 Route::controller( 'users', 'UsersController');

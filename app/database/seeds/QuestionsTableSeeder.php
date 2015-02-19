@@ -59,8 +59,7 @@ class QuestionsTableSeeder extends Seeder {
         $a = Alternative::where('text','=','Vivem juntos')->first()->id;
         $b = Alternative::where('text','=','Vivem separados')->first()->id;
         $c = Alternative::where('text','=','Um deles já morreu (ou os dois)')->first()->id;
-        $d = Alternative::where('text','=','Outros')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+        $question->alternatives()->sync( array( $a, $b, $c) );
 
 
         $question = new Question;
@@ -223,10 +222,11 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene = 4;
         $question->save();
 
-        $a = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
-        $b = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
-        $c = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c ) );
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
+        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
+        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
 
         $question = new Question;
@@ -633,8 +633,8 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene = 6;
         $question->save();
 
-        $a = Alternative::where('text','=','Mais de um ano')->first()->id;
-        $b = Alternative::where('text','=','Nunca cheirei')->first()->id;
+        $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
+        $b = Alternative::where('text','=','Mais de um ano')->first()->id;
         $c = Alternative::where('text','=','Menos de 30 dias')->first()->id;
         $d = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );

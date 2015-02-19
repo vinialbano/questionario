@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="bg-black">
+<html lang="pt-br" class="questionnaire">
 <head>
     <meta charset="UTF-8">
     <title>
@@ -20,7 +20,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="bg-black">
+<body>
 
     @yield('content')
 
