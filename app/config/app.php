@@ -127,8 +127,6 @@ return array(
 		'Zizaco\Confide\ServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Bllim\Datatables\DatatablesServiceProvider',
-		'Barryvdh\Debugbar\ServiceProvider',
-
 
 	),
 
@@ -204,7 +202,6 @@ return array(
 		'String'          	=> 'Andrew13\Helpers\String',
 		'Carbon'          	=> 'Carbon\Carbon',
 		'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
-		'Debugbar' 		  	=> 'Barryvdh\Debugbar\Facade',
 
 	),
 
