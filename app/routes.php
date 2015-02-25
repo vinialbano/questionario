@@ -82,7 +82,7 @@ Route::group(array('prefix' => 'alternatives'), function(){
 # Questions
 Route::group(array('prefix' => 'questions'), function(){
 	Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'questions.index'));
-	Route::get('{question}/show', 		array('uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
+	Route::get('{question}/show', 		array('before' => 'redirect', 'uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
 	Route::get('/modal', 				array('uses' => 'QuestionsController@getModal', 'as' => 'questions.modal'));
 });
 

@@ -15,9 +15,18 @@
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <div class="well">
-                            <h4 class="glow in tlt text-center">{{ $question->display_text != "" ? $question->display_text : $question->text }}</h4>
+                            <h4 class="glow in tlt text-center">{{ nl2br($question->text) }}</h4>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    @if($question->multianswer)
+                    <div class="alert alert-warning">
+                        <strong>Aviso!</strong> Você pode escolher mais de uma alternativa.
+                    </div>
+                    @endif
                 </div>
             </div>
             <div class="row clearfix">
@@ -105,7 +114,7 @@ Sortable.create(destino, {
         if (!multianswer && $('#destino').children().length > 0) {
             this.options.group.put = false;
         }
-            trocaPadding();
+        trocaPadding();
     },
     onRemove: function(){
         this.options.group.put = "origem";

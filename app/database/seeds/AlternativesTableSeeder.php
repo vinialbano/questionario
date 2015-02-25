@@ -40,6 +40,22 @@ class AlternativesTableSeeder extends Seeder {
         $alternative->save();
 
         $alternative = new Alternative;
+        $alternative->text = 'Sim, tem 1';
+        $alternative->save();
+
+        $alternative = new Alternative;
+        $alternative->text = 'Sim, tem 2';
+        $alternative->save();
+
+        $alternative = new Alternative;
+        $alternative->text = 'Sim, tem 3';
+        $alternative->save();
+
+        $alternative = new Alternative;
+        $alternative->text = 'Sim, tem 4';
+        $alternative->save();
+
+        $alternative = new Alternative;
         $alternative->text = 'Nunca tomei';
         $alternative->save();
 
@@ -70,6 +86,34 @@ class AlternativesTableSeeder extends Seeder {
 
         $alternative = new Alternative;
         $alternative->text = 'Feminino';
+        $alternative->save();
+
+        $alternative = new Alternative;
+        $alternative->text = '15 anos';
+        $alternative->save();
+
+        $alternative = new Alternative;
+        $alternative->text = '16 anos';
+        $alternative->save();
+        $alternative = new Alternative;
+        $alternative->text = '17 anos';
+        $alternative->save();
+        $alternative = new Alternative;
+        $alternative->text = '18 anos';
+        $alternative->save();
+        $alternative = new Alternative;
+        $alternative->text = '19 anos';
+        $alternative->save();
+        $alternative = new Alternative;
+        $alternative->text = '20 anos';
+        $alternative->save();
+
+        $alternative = new Alternative;
+        $alternative->text = 'Liberdade Assistida';
+        $alternative->save();
+        
+        $alternative = new Alternative;
+        $alternative->text = 'Prestação de Serviços à Comunidade';
         $alternative->save();
 
         //Questão 2

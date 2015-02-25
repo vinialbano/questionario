@@ -15,14 +15,18 @@ class CreateQuestionsTable extends Migration {
 		Schema::create('questions', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('text');
-			$table->string('display_text');
+			$table->text('text');
 			$table->boolean('multianswer');
 			$table->boolean('allow_other');
 			$table->string('other_text')->nullable();
 			$table->integer('scene')->unsigned();
+			$table->boolean('has_jump');
+			$table->integer('jump_to')->unsigned()->nullable();
 			$table->timestamps();
-
+		});
+		Schema::table('questions', function(Blueprint $table)
+		{
+			$table->foreign('jump_to')->references('id')->on('questions')->onDelete('cascade');
 		});
 	}
 

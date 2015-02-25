@@ -7,35 +7,43 @@ class QuestionsTableSeeder extends Seeder {
         DB::table('questions')->delete();
 
         $question = new Question;
-        $question->text         = 'Sexo:';
-        $question->display_text = '';
+        $question->text         = 'Qual é o seu sexo?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 1;
+        $question->scene        = 1;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Masculino')->first()->id;
         $b = Alternative::where('text','=','Feminino')->first()->id;
         $question->alternatives()->sync( array($a, $b) );
 
-
         $question = new Question;
         $question->text         = 'Quantos anos você tem?';
-        $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text = "Adicionar idade";
-        $question->scene = 1;
+        $question->other_text   = "Adicionar outra idade";
+        $question->scene        = 1;
+        $question->has_jump     = false;
         $question->save();
+
+
+        $a = Alternative::where('text','=','15 anos')->first()->id;
+        $b = Alternative::where('text','=','16 anos')->first()->id;
+        $c = Alternative::where('text','=','17 anos')->first()->id;
+        $d = Alternative::where('text','=','18 anos')->first()->id;
+        $e = Alternative::where('text','=','19 anos')->first()->id;
+        $f = Alternative::where('text','=','20 anos')->first()->id;
+        $question->alternatives()->sync( array($a, $b, $c, $d, $e, $f) );
 
 
         $question = new Question;
         $question->text         = 'Com quem você mora?';
-        $question->display_text = '';
         $question->multianswer  = true;
         $question->allow_other  = true;
-        $question->other_text  = "Adicionar outros";
-        $question->scene = 2;
+        $question->other_text   = "Adicionar outros";
+        $question->scene        = 2;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Pai')->first()->id;
@@ -46,14 +54,13 @@ class QuestionsTableSeeder extends Seeder {
         $f = Alternative::where('text','=','Avó(s) ou Avô(s)')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f ) );
 
-
         $question = new Question;
         $question->text         = 'Seus pais:';
-        $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text  = "Adicionar outros";
-        $question->scene = 2;
+        $question->other_text   = "Adicionar outros";
+        $question->scene        = 2;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Vivem juntos')->first()->id;
@@ -61,13 +68,284 @@ class QuestionsTableSeeder extends Seeder {
         $c = Alternative::where('text','=','Um deles já morreu (ou os dois)')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c) );
 
-
         $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, quantos dias você faltou a alguma aula sem autorização dos seus pais ou responsáveis?';
-        $question->display_text = '';
+        $question->text         = 'Até que grau o responsável da sua família estudou?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 3;
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Nunca estudou')->first()->id;
+        $b = Alternative::where('text','=','Fez até a 1ª, 2ª ou 3ª série do ensino fundamental')->first()->id;
+        $c = Alternative::where('text','=','Fez até a 4ª, 5ª, 6ª ou 7ª série do ensino fundamental')->first()->id;
+        $d = Alternative::where('text','=','Fez até a 8ª série do ensino fundamental')->first()->id;
+        $e = Alternative::where('text','=','Fez até o 1ª ou 2ª série do ensino médio (1° ou 2° colegial)')->first()->id;
+        $f = Alternative::where('text','=','Terminou o ensino médio (3° colegial)')->first()->id;
+        $g = Alternative::where('text','=','Fez faculdade, mas não terminou o curso')->first()->id;
+        $h = Alternative::where('text','=','Fez faculdade completa (terminou o curso)')->first()->id;
+        $i = Alternative::where('text','=','Não sei')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h, $i ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem televisão em cores que funcione?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+
+
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem videocassete que funcione?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem aparelho de DVD que funcione?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem rádio que funcione?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem banheiro?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem automóvel que não seja moto?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem algum empregado que trabalhe todos os dias?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem maquina de lavar que funcione, sem considerar tanquinho?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem geladeira que funcione?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Na sua casa tem freezer, na geladeira ou fora, que funcione?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra quantidade";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, tem 1')->first()->id;
+        $c = Alternative::where('text','=','Sim, tem 2')->first()->id;
+        $d = Alternative::where('text','=','Sim, tem 3')->first()->id;
+        $e = Alternative::where('text','=','Sim, tem 4')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Você sabe se sua família recebe algum auxílio do governo, como por exemplo, bolsa família, bolsa escola, auxílio-gás ou bolsa alimentação?';
+        $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não sei')->first()->id;
+        $b = Alternative::where('text','=','Não recebe')->first()->id;
+        $c = Alternative::where('text','=','Bolsa Família')->first()->id;
+        $d = Alternative::where('text','=','Bolsa Escola')->first()->id;
+        $e = Alternative::where('text','=','Auxílio Gás')->first()->id;
+        $f = Alternative::where('text','=','Bolsa Alimentação')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f ) );
+
+        $question = new Question;
+        $question->text         = 'Você ja foi obrigado a cumprir alguma medida sócio-educativa do governo, como por exemplo, liberdade assistida ou prestação de serviços à comunidade?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outra medida";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não sei')->first()->id;
+        $b = Alternative::where('text','=','Não')->first()->id;
+        $c = Alternative::where('text','=','Liberdade Assistida')->first()->id;
+        $d = Alternative::where('text','=','Prestação de Serviços à Comunidade')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+
+        $question = new Question;
+        $question->text         = 'Você já recebeu informações educativas sobre drogas?';
+        $question->multianswer  = true;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outros";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, na minha escola')->first()->id;
+        $c = Alternative::where('text','=','Sim, na minha família')->first()->id;
+        $d = Alternative::where('text','=','Sim, na minha igreja ou grupo religioso')->first()->id;
+        $e = Alternative::where('text','=','Sim, através da televisão ou rádio')->first()->id;
+        $f = Alternative::where('text','=','Sim, através de livros ou revistas')->first()->id;
+        $g = Alternative::where('text','=','Sim, através da internet')->first()->id;
+        $h = Alternative::where('text','=','Sim, através de amigos')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h ) );
+
+        $question = new Question;
+        $question->text         = 'Se você quisesse procurar alguma informação sobre drogas, o que você faria?';
+        $question->multianswer  = true;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outros";
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Nada')->first()->id;
+        $b = Alternative::where('text','=','Conversaria com algum professor ou funcionário da minha escola')->first()->id;
+        $c = Alternative::where('text','=','Conversaria com alguém da minha família')->first()->id;
+        $d = Alternative::where('text','=','Conversaria com alguém da minha igreja ou grupo religioso')->first()->id;
+        $e = Alternative::where('text','=','Procuraria informações em livros ou revistas')->first()->id;
+        $f = Alternative::where('text','=','Procuraria informações na internet')->first()->id;
+        $g = Alternative::where('text','=','Conversaria com amigos')->first()->id;
+        $h = Alternative::where('text','=','Conversaria com algum profissional da saúde')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h ) );
+
+        $question = new Question;
+        $question->text         = 'Com que intensidade você acredita que o seu futuro será melhor?';
+        $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene        = 3;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Nenhuma')->first()->id;
+        $b = Alternative::where('text','=','Um pouco')->first()->id;
+        $c = Alternative::where('text','=','Mais ou menos')->first()->id;
+        $d = Alternative::where('text','=','Muito')->first()->id;
+        $e = Alternative::where('text','=','Muitíssimo')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
+
+        $question = new Question;
+        $question->text         = 'Olá, filho, tudo bem? No último mês, quantos dias você faltou às aulas sem minha autorização?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 4;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Não faltei')->first()->id;
@@ -77,53 +355,73 @@ class QuestionsTableSeeder extends Seeder {
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
 
+
         $question = new Question;
-        $question->text         = 'Você já experimentou alguma bebida alcoólica? Exemplos: cerveja, chopp, vinho, pinga, caipirinha, aperitivos, sidra, outras.';
-        $question->display_text = '';
+        $question->text         = 'Filho, precisamos conversar sobre um assunto muito importante que envolve a vida dos adolescentes, que é a questão do uso de drogas... Você já experimentou alguma bebida alcoólica? Como cerveja, chopp, vinho, pinga, caipirinha, sidra ou outras.';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 3;
+        $question->scene        = 4;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
-
 
         $question = new Question;
         $question->text         = 'Que idade você tinha quando tomou bebida alcoólica pela primeira vez?';
-        $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text = "Adicionar idade";
-        $question->scene = 3;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 4;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
 
-        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
 
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
 
         $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou alguma bebida alcoólica?';
-        $question->display_text = '';
+        $question->text         = 'Quando foi a primeira vez que você tomou bebida alcoólica?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 4;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+
+
+        $a = Alternative::where('text','=','Menos de 30 dias')->first()->id;
+        $b = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
+        $c = Alternative::where('text','=','Mais de um ano')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você tomou alguma bebida alcoólica?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 3;
+        $question->scene        = 4;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
-
         $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você tomou alguma bebida alcoólica?';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 30 dias você tomou alguma bebida alcoólica?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 3;
+        $question->scene        = 4;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
@@ -131,96 +429,85 @@ class QuestionsTableSeeder extends Seeder {
         $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
-
         $question = new Question;
-        $question->text         = 'Você já comprou pessoalmente alguma bebida alcoólica (mesmo que não tenha sido para você)?';
-        $question->display_text = '';
+        $question->text         = 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 3;
+        $question->scene        = 4;
+        $question->has_jump     = false;
         $question->save();
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $c = Alternative::where('text','=','Já tentei, mas não consegui')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c ) );
 
-
         $question = new Question;
-        $question->text         = 'Quando foi a primeira vez que você tomou bebida alcoólica?';
-        $question->display_text = '';
+        $question->text         = 'E ai, cara, tudo bem? To aqui tomando um energético para ficar mais animado. Já tomou algum? Como Red bull, Flash Power, Flying Hourse, Bad Boy, Blue Energy, Burn.';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 3;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
 
-        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
-        $b = Alternative::where('text','=','Menos de 30 dias')->first()->id;
-        $c = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
-        $d = Alternative::where('text','=','Mais de um ano')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já tomou alguma bebida energética? Exemplos: Red Bull, Flash Power, Flying Horse, Bad Boy, Blue Energy, Burn.';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
-        $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
+        $question = new Question;
+        $question->text         = 'Alguma vez já misturou a bebida energética com bebida alcoólica?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+
+
+        $a = Alternative::where('text','=','Não, nunca misturei com álcool')->first()->id;
+        $b = Alternative::where('text','=','Sim, já misturei com álcool')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
 
         $question = new Question;
-        $question->text         = 'Se você já tomou alguma bebida energética, alguma vez foi misturada com álcool?';
-        $question->display_text = '';
+        $question->text         = 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
 
-        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
-        $b = Alternative::where('text','=','Não, nunca misturei com álcool')->first()->id;
-        $c = Alternative::where('text','=','Sim, já misturei com álcool')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já fumou cigarro?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
-        $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
-
         $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você fumou algum cigarro?';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 12 meses você fumou algum cigarro?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
-
         $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você fumou algum cigarro?';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 30 dias você fumou algum cigarro?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
@@ -228,28 +515,29 @@ class QuestionsTableSeeder extends Seeder {
         $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
-
         $question = new Question;
         $question->text         = 'Que idade você tinha quando fumou cigarro pela primeira vez?';
-        $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text = "Adicionar idade";
-        $question->scene = 4;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 5;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca fumei')->first());
 
-        $a = Alternative::where('text','=','Nunca fumei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
 
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
 
         $question = new Question;
-        $question->text         = 'Se você fuma, quanto cigarros você fuma por dia?';
-        $question->display_text = '';
+        $question->text         = 'Você fuma sempre? Quanto cigarros você fuma por dia?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não fumo')->first());
+
 
         $a = Alternative::where('text','=','Não fumo')->first()->id;
         $b = Alternative::where('text','=','De 1 a 10 cigarros por dia')->first()->id;
@@ -257,14 +545,27 @@ class QuestionsTableSeeder extends Seeder {
         $d = Alternative::where('text','=','Mais de 20 cigarros por dia')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
+        $question = new Question;
+        $question->text         = 'Você já fumou em narguile?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 5;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
 
         $question = new Question;
-        $question->text         = 'Você já fumou em narguile (narguilê, arguile, nargas)?';
-        $question->display_text = '';
+        $question->text         = 'Já experimentou maconha ou haxixe?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 4;
+        $question->allow_other   = false;
+        $question->scene        = 6;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
@@ -272,452 +573,146 @@ class QuestionsTableSeeder extends Seeder {
 
 
         $question = new Question;
-        $question->text         = 'Você ja cheirou algum produto para se sentir "alterado/diferente"? Exemplos: loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás, tinta. (Não vale cocaína)';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 12 meses você usou maconha?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
+        $question->allow_other   = false;
+        $question->scene        = 6;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
-
         $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você cheirou algum produto para se sentir "alterado/diferente"?';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 30 dias você usou maconha?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
+        $question->allow_other   = false;
+        $question->scene        = 6;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você cheirou algum produto para se sentir "alterado/diferente"?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
         $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
         $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Se você já cheirou algum produto para se sentir "alterado/diferente", qual você cheirou por último?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar outro";
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não cheirei')->first()->id;
-        $b = Alternative::where('text','=','Loló/Lança')->first()->id;
-        $c = Alternative::where('text','=','Cola')->first()->id;
-        $d = Alternative::where('text','=','Éter')->first()->id;
-        $e = Alternative::where('text','=','Gasolina')->first()->id;
-        $f = Alternative::where('text','=','Tíner/Aguarrás/Tinta/Benzina')->first()->id;
-        $g = Alternative::where('text','=','Esmalte/Acetona')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g ) );
-
-
-        $question = new Question;
-        $question->text         = 'Que idade você tinha quando cheirou algum desses produtos para se sentir "alterado/diferente" pela primeira vez?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'Quando foi a primeira vez que você cheirou algum produto para se sentir "alterado/diferente"?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
-        $b = Alternative::where('text','=','Menos de 30 dias')->first()->id;
-        $c = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
-        $d = Alternative::where('text','=','Mais de um ano')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Se você cheirou algum desses produtos, na última vez que cheirou, onde você os conseguiu?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
-        $b = Alternative::where('text','=','Tinha em minha casa')->first()->id;
-        $c = Alternative::where('text','=','Ganhei de amigos')->first()->id;
-        $d = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Já experimentou maconha (ou haxixe)?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 5;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você usou maconha?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 5;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você usou maconha?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 5;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
-        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
-        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
 
         $question = new Question;
         $question->text         = 'Que idade você tinha quando experimentou maconha pela primeira vez?';
-        $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 5;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 6;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca experimentei')->first());
 
-        $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
 
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
 
         $question = new Question;
         $question->text         = 'Quando foi a primeira vez que você fumou maconha?';
-        $question->display_text = '';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 5;
+        $question->allow_other   = false;
+        $question->scene        = 6;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca fumei')->first());
 
-        $a = Alternative::where('text','=','Nunca fumei')->first()->id;
-        $b = Alternative::where('text','=','Menos de 30 dias')->first()->id;
-        $c = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
-        $d = Alternative::where('text','=','Mais de um ano')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
+        $a = Alternative::where('text','=','Menos de 30 dias')->first()->id;
+        $b = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
+        $c = Alternative::where('text','=','Mais de um ano')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
 
         $question = new Question;
-        $question->text         = 'Você já tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica? Exemplos: Anfepramona, Femproporex, Mazindol, Hipofagin, Inibex, Desobesi, Moderine, Absten, Fagolipo, Dualid. (Não vale adoçante, shake, nem chá)';
-        $question->display_text = '';
+        $question->text         = 'E aí, você já experimentou cocaína?';
         $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar remédio";
-        $question->scene = 10;
+        $question->allow_other   = false;
+        $question->scene        = 7;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
-        $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você usou cocaína?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 7;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
 
         $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos ultimos 30 dias, você tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica?';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 30 dias você usou cocaína?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
+        $question->allow_other   = false;
+        $question->scene        = 7;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
         $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
         $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado (ligado) sem receita médica pela primeira vez?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 10;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já tomou Holoten, Carpinol ou Medavane para se sentir "alterado/diferente"?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Holoten')->first()->id;
-        $c = Alternative::where('text','=','Carpinol')->first()->id;
-        $d = Alternative::where('text','=','Medavane')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já tomou algum tranquilizante (calmante) sem receita médica? Exemplos: Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. (Não vale chás, nem produtos naturais como Maracugina)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar tranquilizante";
-        $question->scene = 10;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou algum tranquilizante (calmante) sem receita médica?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você tomou algum tranquilizante (calmante) sem receita médica?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
-        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
-        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Que idade você tinha quando tomou algum tranquilizante (calmante) sem receita médica pela primeira vez?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 10;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já experimentou cocaína?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 6;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você usou cocaína?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 6;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você usou cocaína?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 6;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
-        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
-        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
 
         $question = new Question;
         $question->text         = 'Que idade você tinha quando experimentou cocaína pela primeira vez?';
-        $question->display_text = '';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 6;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 7;
+        $question->has_jump     = false;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca experimentei')->first());
 
-        $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
 
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
 
         $question = new Question;
         $question->text         = 'Quando foi a primeira vez que você cheirou cocaína?';
-        $question->display_text = '';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 6;
+        $question->allow_other   = false;
+        $question->scene        = 7;
+        $question->has_jump     = false;
         $question->save();
-
-        $a = Alternative::where('text','=','Nunca cheirei')->first()->id;
-        $b = Alternative::where('text','=','Mais de um ano')->first()->id;
-        $c = Alternative::where('text','=','Menos de 30 dias')->first()->id;
-        $d = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
 
 
-        $question = new Question;
-        $question->text         = 'Você já experimentou crack ou merla?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 8;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Crack')->first()->id;
-        $c = Alternative::where('text','=','Merla')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você usou crack ou merla?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 8;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você usou crack ou merla?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 8;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
-        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
-        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
-
-        $question = new Question;
-        $question->text         = 'Que idade você tinha quando experimentou crack ou merla pela primeira vez?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 8;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca experimentei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'Quando foi a primeira vez que você usou crack ou merla?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 8;
-        $question->save();
-
-        $a = Alternative::where('text','=','Nunca usei')->first()->id;
+        $a = Alternative::where('text','=','Mais de um ano')->first()->id;
         $b = Alternative::where('text','=','Menos de 30 dias')->first()->id;
         $c = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
-        $d = Alternative::where('text','=','Mais de um ano')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
-
+        $question->alternatives()->sync( array( $a, $b, $c ) );
 
         $question = new Question;
-        $question->text         = 'Você já tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho) para se sentir "alterado/diferente"?';
-        $question->display_text = '';
+        $question->text         = 'Você já tomou Artane, Bentyl, Akineton, ou Chá de Lírio para se sentir alterado ou diferente? Este Chá a galera chama de saia-branca, véu-de-noiva,trombeteira,zabumba, ou cartucho.';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 7;
+        $question->allow_other   = false;
+        $question->scene        = 8;
+        $question->has_jump     = true;
         $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Artane')->first()->id;
@@ -726,26 +721,401 @@ class QuestionsTableSeeder extends Seeder {
         $e = Alternative::where('text','=','Chá de Lírio')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
 
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você tomou algum desses?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 8;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
 
         $question = new Question;
-        $question->text         = 'De um ano pra cá, ou seja, nos últimos 12 meses, você tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho) para se sentir "alterado/diferente"?';
-        $question->display_text = '';
+        $question->text         = 'Nos últimos 30 dias você tomou algum desses"?';
         $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 7;
+        $question->allow_other   = false;
+        $question->scene        = 8;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
+        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
+        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+        $question = new Question;
+        $question->text         = 'Que idade você tinha quando tomou pela primeira vez?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 8;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+
+
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
+
+        $question = new Question;
+        $question->text         = 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 9;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Crack')->first()->id;
+        $c = Alternative::where('text','=','Merla')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você usou crack ou merla?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 9;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 30 dias você usou crack ou merla?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 9;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
+        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
+        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+        $question = new Question;
+        $question->text         = 'Que idade você tinha quando experimentou crack ou merla pela primeira vez?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 9;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca experimentei')->first());
+
+
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
+
+        $question = new Question;
+        $question->text         = 'Quando foi a primeira vez que você usou crack ou merla?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 9;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca usei')->first());
+
+
+        $b = Alternative::where('text','=','Menos de 30 dias')->first()->id;
+        $c = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
+        $d = Alternative::where('text','=','Mais de um ano')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+        $question = new Question;
+        $question->text         = 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você cheirou algum desses produtos?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 30 dias você cheirou algum desses produtos?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
+        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
+        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+        $question = new Question;
+        $question->text         = 'Qual você cheirou por último?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar outro";
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não cheirei')->first());
+
+
+        $a = Alternative::where('text','=','Loló/Lança')->first()->id;
+        $b = Alternative::where('text','=','Cola')->first()->id;
+        $c = Alternative::where('text','=','Éter')->first()->id;
+        $d = Alternative::where('text','=','Gasolina')->first()->id;
+        $e = Alternative::where('text','=','Tíner/Aguarrás/Tinta/Benzina')->first()->id;
+        $f = Alternative::where('text','=','Esmalte/Acetona')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f ) );
+
+        $question = new Question;
+        $question->text         = 'Que idade você tinha quando cheirou algum desses produtos pela primeira vez?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+
+
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
+
+        $question = new Question;
+        $question->text         = 'Quando foi a primeira vez que você cheirou algum desses produtos?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+
+
+        $a = Alternative::where('text','=','Menos de 30 dias')->first()->id;
+        $b = Alternative::where('text','=','Mais de 30 dias e menos de um ano')->first()->id;
+        $c = Alternative::where('text','=','Mais de um ano')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
+
+        $question = new Question;
+        $question->text         = 'Onde você conseguiu esse produto na última vez que cheirou?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+
+
+        $a = Alternative::where('text','=','Tinha em minha casa')->first()->id;
+        $b = Alternative::where('text','=','Ganhei de amigos')->first()->id;
+        $c = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
+
+        $question = new Question;
+        $question->text         = 'Mas aí, você ja experimentou heroína ou ópio?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Heroína')->first()->id;
+        $c = Alternative::where('text','=','Ópio')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
+
+        $question = new Question;
+        $question->text         = 'Acredito alguém aqui deva ter doce. Você já tomou LSD ou chá de cogumelo ? ';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','LSD')->first()->id;
+        $c = Alternative::where('text','=','Chá de Cogumelo')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c ) );
+
+        $question = new Question;
+        $question->text         = 'E êxtase, já experimentou?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 10;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
-
         $question = new Question;
-        $question->text         = 'De um mês pra cá, ou seja, nos últimos 30 dias, você tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho) para se sentir "alterado/diferente"?';
-        $question->display_text = '';
+        $question->text         = 'Você já usou Benflogin para se sentir alterado?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 7;
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Nossa, perguntamos sobre tantas drogas pra você... Mas aí, você já ouviu falar de outras drogas que não falamos?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar droga";
+        $question->scene        = 10;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
+
+        $question = new Question;
+        $question->text         = 'Você já tomou algum remédio para emagrecer ou ficar acordado sem receita médica? Por exemplo Anfepramona, Femproporex, Mazindol, Hipofagin, Inibex, Desobesi, Moderine, Absten, Fagolipo, Dualid. Não considere adoçante, shake, ou chá.';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar remédio";
+        $question->scene        = 11;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você tomou algum remédio para emagrecer ou ficar acordado sem receita médica?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 11;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 30 dias você tomou algum remédio para emagrecer ou ficar acordado sem receita médica?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 11;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
+        $c = Alternative::where('text','=','Sim, de 6 a 19 dias no mês')->first()->id;
+        $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+        $question = new Question;
+        $question->text         = 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado sem receita médica pela primeira vez?';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 11;
+        $question->has_jump     = false;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+
+
+        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
+        $b = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Você já tomou Holoten, Carpinol ou Medavane para se sentir alterado?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 11;
+        $question->has_jump     = false;
+        $question->save();
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Holoten')->first()->id;
+        $c = Alternative::where('text','=','Carpinol')->first()->id;
+        $d = Alternative::where('text','=','Medavane')->first()->id;
+        $question->alternatives()->sync( array( $a, $b, $c, $d ) );
+
+        $question = new Question;
+        $question->text         = 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.';
+        $question->multianswer  = false;
+        $question->allow_other  = true;
+        $question->other_text   = "Adicionar tranquilizante";
+        $question->scene        = 11;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 12 meses você tomou algum calmante sem receita médica?';
+        $question->multianswer  = false;
+        $question->allow_other   = false;
+        $question->scene        = 11;
+        $question->has_jump     = true;
+        $question->save();
+        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+
+
+        $a = Alternative::where('text','=','Não')->first()->id;
+        $b = Alternative::where('text','=','Sim')->first()->id;
+        $question->alternatives()->sync( array( $a, $b ) );
+
+        $question = new Question;
+        $question->text         = 'Nos últimos 30 dias você tomou algum calmante sem receita médica?';
+        $question->multianswer  = false;
+        $question->allow_other  = false;
+        $question->scene        = 11;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -754,41 +1124,25 @@ class QuestionsTableSeeder extends Seeder {
         $d = Alternative::where('text','=','Sim, 20 dias ou mais no mês')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
-
         $question = new Question;
-        $question->text         = 'Se você já tomou Artane, Bentyl, Akineton ou Chá de Lírio (saia-branca, véu-de-noiva, trombeteira, zabumba, cartucho), que idade você tinha quando tomou para se sentir "alterado/diferente" primeira vez?';
-        $question->display_text = '';
+        $question->text         = 'Que idade você tinha quando tomou algum calmante sem receita médica pela primeira vez?';
         $question->multianswer  = false;
         $question->allow_other  = true;
-        $question->other_text  = "Adicionar idade";
-        $question->scene = 7;
+        $question->other_text   = "Adicionar idade";
+        $question->scene        = 11;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
         $b = Alternative::where('text','=','Não lembro')->first()->id;
         $question->alternatives()->sync( array( $a, $b ) );
 
-
         $question = new Question;
-        $question->text         = 'Você ja experimentou heroína ou ópio?';
-        $question->display_text = '';
+        $question->text         = 'Existem varios remédios que fazem se sentir alterado. Dentre eles estão a Morfina, Tylex, Setux, Sylador, Tramal, Dolantina, Fentanil, Dolosal, Belacodid. Você já tomou algúm desses remédios para se sentir alterado?';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Heroína')->first()->id;
-        $c = Alternative::where('text','=','Ópio')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já tomou algum dos remédios abaixo para se sentir "alterado/diferente"? Morfina, Tylex, Setux, Sylador, Tramal (Tramadol), Dolantina (Meperidina ou Petidina), Fentanil, Dolosal, Belacodid.';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
+        $question->scene        = 11;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -803,53 +1157,12 @@ class QuestionsTableSeeder extends Seeder {
         $j = Alternative::where('text','=','Belacodid')->first()->id;
         $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h, $i, $j ) );
 
-
         $question = new Question;
-        $question->text         = 'Você já tomou LSD (ácido) ou chá de cogumelo?';
-        $question->display_text = '';
+        $question->text         = 'Você já tomou algum medicamento anabolizante para aumentar sua musculatura ou para dar mais força? Por exemplo, Anabolex, Androlone, Androviron, Decadurabolin, Durabolin, Durateston, Equipoise, Parabolan, Primobolan.';
         $question->multianswer  = false;
         $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','LSD')->first()->id;
-        $c = Alternative::where('text','=','Chá de Cogumelo')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já experimentou êxtase?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já usou Benflogin para se sentir "alterado/diferente"?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 9;
-        $question->save();
-
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já tomou algum medicamento anabolizante para aumentar sua musculatura ou para dar mais força? Exemplos: Anabolex, Androlone, Androviron, Decadurabolin, Durabolin, Durateston, Equipoise, Parabolan, Primobolan.';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 10;
+        $question->scene        = 11;
+        $question->has_jump     = false;
         $question->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -865,255 +1178,78 @@ class QuestionsTableSeeder extends Seeder {
         $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h, $i, $j ) );
 
 
-        $question = new Question;
-        $question->text         = 'Você já ouviu falar de outras drogas não citadas neste questionário?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text = "Adicionar droga";
-        $question->scene = 9;
+
+        $question           = Question::where('text', '=', 'Filho, precisamos conversar sobre um assunto muito importante que envolve a vida dos adolescentes, que é a questão do uso de drogas... Você já experimentou alguma bebida alcoólica? Como cerveja, chopp, vinho, pinga, caipirinha, sidra ou outras.')->first();
+        $question->jump_to  = Question::where('text', '=', 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Até que grau o chefe (responsável) de sua família estudou?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou alguma bebida alcoólica?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Nunca estudou')->first()->id;
-        $b = Alternative::where('text','=','Fez até a 1ª, 2ª ou 3ª série do ensino fundamental')->first()->id;
-        $c = Alternative::where('text','=','Fez até a 4ª, 5ª, 6ª ou 7ª série do ensino fundamental')->first()->id;
-        $d = Alternative::where('text','=','Fez até a 8ª série do ensino fundamental')->first()->id;
-        $e = Alternative::where('text','=','Fez até o 1ª ou 2ª série do ensino médio (1° ou 2° colegial)')->first()->id;
-        $f = Alternative::where('text','=','Terminou o ensino médio (3° colegial)')->first()->id;
-        $g = Alternative::where('text','=','Fez faculdade, mas não terminou o curso')->first()->id;
-        $h = Alternative::where('text','=','Fez faculdade completa (terminou o curso)')->first()->id;
-        $i = Alternative::where('text','=','Não sei')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h, $i ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem televisão em cores? (Não vale quebrada)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'E ai, cara, tudo bem? To aqui tomando um energético para ficar mais animado. Já tomou algum? Como Red bull, Flash Power, Flying Hourse, Bad Boy, Blue Energy, Burn.')->first();
+        $question->jump_to  = Question::where('text', '=', 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem videocassete? (Não vale quebrado)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Você já fumou em narguile?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem aparelho de DVD? (Não vale quebrado)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você fumou algum cigarro?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando fumou cigarro pela primeira vez?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem rádio? (Não vale quebrado)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Já experimentou maconha ou haxixe?')->first();
+        $question->jump_to  = Question::where('text', '=', 'E aí, você já experimentou cocaína?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem banheiro?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você usou maconha?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando experimentou maconha pela primeira vez?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem automóvel? (Não vale moto)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'E aí, você já experimentou cocaína?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Você já tomou Artane, Bentyl, Akineton, ou Chá de Lírio para se sentir alterado ou diferente? Este Chá a galera chama de saia-branca, véu-de-noiva,trombeteira,zabumba, ou cartucho.')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem algum empregado(a) que trabalhe todos os dias para sua família? Exemplo: doméstica, babá, motorista, jardineiro, etc.';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você usou cocaína?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando experimentou cocaína pela primeira vez?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem maquina de lavar (não vale tanquinho)? (Não vale quebrada)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question = Question::where('text', '=', 'Você já tomou Artane, Bentyl, Akineton, ou Chá de Lírio para se sentir alterado ou diferente? Este Chá a galera chama de saia-branca, véu-de-noiva,trombeteira,zabumba, ou cartucho.')->first();
+        $question->jump_to      = Question::where('text', '=', 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem geladeira? (Não vale quebrada)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum desses?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando tomou pela primeira vez?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Na sua casa tem freezer (da geladeira ou independente)? (Não vale quebrado)';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar quantidade";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você já recebeu informações educativas sobre drogas?';
-        $question->display_text = '';
-        $question->multianswer  = true;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar outros";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Mas aí, você ja experimentou heroína ou ópio?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não')->first()->id;
-        $b = Alternative::where('text','=','Sim, na minha escola')->first()->id;
-        $c = Alternative::where('text','=','Sim, na minha família')->first()->id;
-        $d = Alternative::where('text','=','Sim, na minha igreja ou grupo religioso')->first()->id;
-        $e = Alternative::where('text','=','Sim, através da televisão ou rádio')->first()->id;
-        $f = Alternative::where('text','=','Sim, através de livros ou revistas')->first()->id;
-        $g = Alternative::where('text','=','Sim, através da internet')->first()->id;
-        $h = Alternative::where('text','=','Sim, através de amigos')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h ) );
-
-
-        $question = new Question;
-        $question->text         = 'Se você quisesse procurar alguma informação sobre drogas, o que você faria?';
-        $question->display_text = '';
-        $question->multianswer  = true;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar outros";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você cheirou algum desses produtos?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Qual você cheirou por último?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Nada')->first()->id;
-        $b = Alternative::where('text','=','Conversaria com algum professor ou funcionário da minha escola')->first()->id;
-        $c = Alternative::where('text','=','Conversaria com alguém da minha família')->first()->id;
-        $d = Alternative::where('text','=','Conversaria com alguém da minha igreja ou grupo religioso')->first()->id;
-        $e = Alternative::where('text','=','Procuraria informações em livros ou revistas')->first()->id;
-        $f = Alternative::where('text','=','Procuraria informações na internet')->first()->id;
-        $g = Alternative::where('text','=','Conversaria com amigos')->first()->id;
-        $h = Alternative::where('text','=','Conversaria com algum profissional da saúde')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f, $g, $h ) );
-
-
-        $question = new Question;
-        $question->text         = 'Com que intensidade você acredita que o seu futuro será melhor?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Você já tomou algum remédio para emagrecer ou ficar acordado sem receita médica? Por exemplo Anfepramona, Femproporex, Mazindol, Hipofagin, Inibex, Desobesi, Moderine, Absten, Fagolipo, Dualid. Não considere adoçante, shake, ou chá.')->first();
+        $question->jump_to  = Question::where('text', '=', 'Você já tomou Holoten, Carpinol ou Medavane para se sentir alterado?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Nenhuma')->first()->id;
-        $b = Alternative::where('text','=','Um pouco')->first()->id;
-        $c = Alternative::where('text','=','Mais ou menos')->first()->id;
-        $d = Alternative::where('text','=','Muito')->first()->id;
-        $e = Alternative::where('text','=','Muitíssimo')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você sabe se sua família recebe algum auxílio do governo, como por exemplo, bolsa família, bolsa escola, auxílio gás ou bolsa alimentação?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = false;
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum remédio para emagrecer ou ficar acordado sem receita médica?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado sem receita médica pela primeira vez?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não sei')->first()->id;
-        $b = Alternative::where('text','=','Não recebe')->first()->id;
-        $c = Alternative::where('text','=','Bolsa Família')->first()->id;
-        $d = Alternative::where('text','=','Bolsa Escola')->first()->id;
-        $e = Alternative::where('text','=','Auxílio Gás')->first()->id;
-        $f = Alternative::where('text','=','Bolsa Alimentação')->first()->id;
-        $question->alternatives()->sync( array( $a, $b, $c, $d, $e, $f ) );
-
-
-        $question = new Question;
-        $question->text         = 'Você ja foi obrigado a cumprir alguma medida sócio-educativa do governo, como por exemplo, liberdade assistida ou prestação de serviços à comunidade?';
-        $question->display_text = '';
-        $question->multianswer  = false;
-        $question->allow_other  = true;
-        $question->other_text  = "Adicionar medida";
-        $question->scene = 11;
+        $question           = Question::where('text', '=', 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.')->first();
+        $question->jump_to  = Question::where('text', '=', 'Existem varios remédios que fazem se sentir alterado. Dentre eles estão a Morfina, Tylex, Setux, Sylador, Tramal, Dolantina, Fentanil, Dolosal, Belacodid. Você já tomou algúm desses remédios para se sentir alterado?')->first()->id;
         $question->save();
 
-        $a = Alternative::where('text','=','Não sei')->first()->id;
-        $b = Alternative::where('text','=','Não')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
-
+        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum calmante sem receita médica?')->first();
+        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando tomou algum calmante sem receita médica pela primeira vez?')->first()->id;
+        $question->save();
 
     }
 

@@ -13,6 +13,14 @@ class Question extends Eloquent
         return $this->hasMany('Answer')->withTimestamps();
     }
 
+    public function jumpTo(){
+        return $this->hasOne('Question', 'jump_to');
+    }
+
+    public function alternative(){
+        return $this->hasOne('Alternative');
+    }
+
     public function getNext(){
         $next = Question::where('scene', '=', $this->scene)->where('id', '>', $this->id)->first();
         if($next == null) {

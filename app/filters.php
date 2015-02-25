@@ -45,6 +45,34 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('redirect', function($route, $request)
+{
+
+	$questions = Session::get('questions');
+	$question = $route->getParameter('question');
+	$previous = $question->getPrevious();
+	$achou = false;
+	while($previous != null && !$achou){
+		$top = sizeof($questions) - 1;
+		$bottom = 0;
+		while($bottom <= $top)
+		{
+			if(in_array($previous->id, $questions[$bottom])) {
+				$achou = true;
+				break;
+			}
+			$bottom++;
+		}
+		if (!$achou){
+			$question = $previous;
+			$previous = $previous->getPrevious();
+		}
+	}
+	$route->setParameter('question', $question);
+
+
+});
+
 
 Route::filter('auth.basic', function()
 {
