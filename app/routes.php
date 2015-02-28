@@ -57,39 +57,44 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth', 'namespace' => 'Admi
 
 	# Admin Dashboard
 	Route::get('/',	array('uses' => 'DashboardController@index',	'as' => 'admin.dashboard.index'));
-
 	Route::controller('comments', 'CommentsController');
 
 });
 
+Route::group(array('prefix' => 'questionnaire', 'before' => 'auth'), function()
+{
 
-# Comments
-Route::group(array('prefix' => 'comments'), function(){
-	Route::get('/create', array('uses' => 'CommentsController@create', 'as' => 'comments.create'));
-	Route::post('/', array('uses' => 'CommentsController@store', 'as' => 'comments.store'));
+	# Comments
+	Route::group(array('prefix' => 'comments'), function(){
+		Route::get('/create', array('uses' => 'CommentsController@create', 'as' => 'comments.create'));
+		Route::post('/', array('uses' => 'CommentsController@store', 'as' => 'comments.store'));
+	});
+
+	# Answers
+	Route::group(array('prefix' => 'answers'), function(){
+		Route::post('/', array('uses' => 'AnswersController@store', 'as' => 'answers.store'));
+	});
+
+	# Alternatives
+	Route::group(array('prefix' => 'alternatives'), function(){
+		Route::post('/', array('uses' => 'AlternativesController@firstOrNew', 'as' => 'alternatives.firstOrNew'));
+	});
+
+	# Questions
+	Route::group(array('prefix' => 'questions'), function(){
+		Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'questions.index'));
+		Route::get('{question}/show', 		array('before' => 'redirect', 'uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
+		Route::get('/modal', 				array('uses' => 'QuestionsController@getModal', 'as' => 'questions.modal'));
+		Route::get('/apresentacao/{question}', 				array('uses' => 'QuestionsController@getApresentacao', 'as' => 'questions.apresentacao'));
+	});
+
+	# Home
+	Route::get('/apresentacao', array('uses' => 'HomeController@apresentacao', 'as' => 'apresentacao'));
+				//
 });
-
-# Answers
-Route::group(array('prefix' => 'answers'), function(){
-	Route::post('/', array('uses' => 'AnswersController@store', 'as' => 'answers.store'));
-});
-
-# Alternatives
-Route::group(array('prefix' => 'alternatives'), function(){
-	Route::post('/', array('uses' => 'AlternativesController@firstOrNew', 'as' => 'alternatives.firstOrNew'));
-});
-
-# Questions
-Route::group(array('prefix' => 'questions'), function(){
-	Route::get('/', 					array('uses' => 'QuestionsController@index',	'as' => 'questions.index'));
-	Route::get('{question}/show', 		array('before' => 'redirect', 'uses' => 'QuestionsController@show', 	'as' => 'questions.show'));
-	Route::get('/modal', 				array('uses' => 'QuestionsController@getModal', 'as' => 'questions.modal'));
-});
-
-# Home
-Route::get('/', array('uses' => 'HomeController@index', 'as' => 'index'));
-Route::get('/apresentacao', array('uses' => 'HomeController@apresentacao', 'as' => 'apresentacao'));
 Route::get('/finalizacao', array('uses' => 'HomeController@finalizacao', 'as' => 'finalizacao'));
-//
-
-Route::controller( 'users', 'UsersController');
+Route::get('/', array('uses' => 'HomeController@index', 'as' => 'index'));
+Route::get('/login', array('uses' => 'UsersController@getLogin', 'as' => 'login'));
+Route::get('/logout', array('uses' => 'UsersController@getLogout', 'as' => 'logout'));
+Route::post('/login', array('uses' => 'UsersController@postLogin', 'as' => 'login'));
+//Route::controller( 'users', 'UsersController');

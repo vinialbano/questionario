@@ -21,12 +21,14 @@ class CreateQuestionsTable extends Migration {
 			$table->string('other_text')->nullable();
 			$table->integer('scene')->unsigned();
 			$table->boolean('has_jump');
+			$table->integer('alternative_id')->unsigned()->nullable();
 			$table->integer('jump_to')->unsigned()->nullable();
 			$table->timestamps();
 		});
 		Schema::table('questions', function(Blueprint $table)
 		{
 			$table->foreign('jump_to')->references('id')->on('questions')->onDelete('cascade');
+			$table->foreign('alternative_id')->references('id')->on('alternatives')->onDelete('cascade');
 		});
 	}
 

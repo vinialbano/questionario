@@ -43,7 +43,7 @@
 
 
             <li>
-                <a href="{{{ URL::to('users/logout') }}}"><i class="fa fa-sign-out"></i> Logout</a>
+                <a href="{{{ URL::to('logout') }}}"><i class="fa fa-sign-out"></i> Logout</a>
             </li>
 
         </ul>

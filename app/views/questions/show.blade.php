@@ -22,6 +22,11 @@
             </div>
             <div class="row clearfix">
                 <div class="col-md-12 column">
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <strong>Aviso!</strong> {{$errors->first()}}
+                    </div>
+                    @endif
                     @if($question->multianswer)
                     <div class="alert alert-warning">
                         <strong>Aviso!</strong> Você pode escolher mais de uma alternativa.
@@ -53,7 +58,7 @@
             <div class="row clearfix">
                 <div class="col-md-6 column">
                     @if($question->getPrevious() != null)
-                    <a href="{{{URL::route('questions.show', $question->getPrevious()->id)}}}" class="btn btn-warning btn-block"><i class="fa fa-arrow-circle-left"></i> Anterior</a>
+                    <a href="{{{URL::route('questions.show', Session::get('previous'.$question->id))}}}" class="btn btn-warning btn-block"><i class="fa fa-arrow-circle-left"></i> Anterior</a>
                     @endif
                 </div>
                 <div class="col-md-6 column">
@@ -121,6 +126,24 @@ Sortable.create(destino, {
         trocaPadding();
     }
 });
+
+(function($) {
+    $(window).load(function () {
+        // retrieved this line of code from http://dimsemenov.com/plugins/magnific-popup/documentation.html#api
+        @if($question->id == 5 || $question->id == 21 || $question->id == 28 || $question->id == 41 || $question->id == 50 || $question->id == 55 || $question->id == 67)
+        $.magnificPopup.open({
+            items: {
+                src: "{{{URL::route('questions.apresentacao', $question->id)}}}"
+            },
+            type: 'ajax',
+            modal: 'true'
+
+          // You may add options here, they're exactly the same as for $.fn.magnificPopup call
+          // Note that some settings that rely on click event (like disableOn or midClick) will not work here
+        }, 0);
+        @endif
+    });
+})(jQuery);
 
 $(document).ready(function(){
     $("#proximo").click(function(event){

@@ -41,7 +41,7 @@ Route::filter('auth', function()
 		{
 			return Response::make('Unauthorized', 401);
 		}
-		return Redirect::guest('users/login');
+		return Redirect::guest('login');
 	}
 });
 
@@ -94,6 +94,11 @@ Route::filter('guest', function()
 {
 	if (Auth::check()) return Redirect::to('/');
 });
+
+
+// Check for role on all admin routes, minimum admin level
+Entrust::routeNeedsRole( 'admin*', array('admin'), Redirect::to('/') );
+Entrust::routeNeedsRole( 'questionnaire*', array('aluno','teste'), Redirect::to('/'), false );
 
 /*
 |--------------------------------------------------------------------------

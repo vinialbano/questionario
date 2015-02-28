@@ -26,7 +26,6 @@
                 {{ Form::textarea('comment', '', array('class' => 'form-control', 'rows' => '3', 'placeholder' => 'Escreva aqui!')) }}
             </div>
             <div class="form-group pull-right">
-                <a href="{{{ URL::route('finalizacao') }}}" class="btn btn-warning btn-lg"><i class="fa fa-times-circle-o"></i> Não, obrigado!</a>
                 <button name="submit" type="submit" class="btn btn-success btn-lg"><i class="fa fa-check-circle-o"></i> Enviar</button>
             </div>
             {{ Form::close() }}

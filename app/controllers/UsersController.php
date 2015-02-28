@@ -63,7 +63,11 @@ class UsersController extends Controller
 public function getLogin()
 {
     if (Confide::user()) {
-        return Redirect::route('admin.dashboard.index');
+        if ( Entrust::hasRole('admin')){
+            return Redirect::route('admin.dashboard.index');
+        } else if ( Entrust::hasRole('aluno') ||  Entrust::hasRole('teste')){
+            return Redirect::route('apresentacao');
+        }
     } else {
         return View::make('login');
     }
@@ -80,7 +84,11 @@ public function postLogin()
     $input = Input::all();
 
     if ($repo->login($input)) {
-        return Redirect::route('admin.dashboard.index');
+        if ( Entrust::hasRole('admin')){
+            return Redirect::route('admin.dashboard.index');
+        } else if ( Entrust::hasRole('aluno') ||  Entrust::hasRole('teste')){
+            return Redirect::route('apresentacao');
+        }
     } else {
         if ($repo->isThrottled($input)) {
             $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
@@ -192,6 +200,7 @@ public function postReset()
 */
 public function getLogout()
 {
+    Session::flush();
     Confide::logout();
 
     return Redirect::to('/');

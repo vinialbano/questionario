@@ -10,8 +10,8 @@ Login :: @parent
 
 @section('content')
 <div class="form-box" id="login-box">
-	<div class="header">Área Administrativa</div>
-	<form role="form"  method="post" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8">
+	<div class="header">Login de Usuário</div>
+	<form role="form"  method="post" action="{{{ URL::route('login') }}}" accept-charset="UTF-8">
 
 		<div class="body bg-gray">
 			<div class="form-group">

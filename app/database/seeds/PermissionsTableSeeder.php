@@ -34,7 +34,8 @@ class PermissionsTableSeeder extends Seeder {
         DB::table('permission_role')->delete();
 
         $role_id_admin = Role::where('name', '=', 'admin')->first()->id;
-        $role_id_answer = Role::where('name', '=', 'answer')->first()->id;
+        $role_id_teste = Role::where('name', '=', 'teste')->first()->id;
+        $role_id_aluno = Role::where('name', '=', 'aluno')->first()->id;
         $permission_base = (int)DB::table('permissions')->first()->id - 1;
 
         $permissions = array(
@@ -55,7 +56,11 @@ class PermissionsTableSeeder extends Seeder {
                 'permission_id' => $permission_base + 4
             ),
             array(
-                'role_id'       => $role_id_answer,
+                'role_id'       => $role_id_teste,
+                'permission_id' => $permission_base + 5
+            ),
+            array(
+                'role_id'       => $role_id_aluno,
                 'permission_id' => $permission_base + 5
             ),
         );

@@ -16,12 +16,7 @@ class CreateAlternativesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('text')->unique();
-			$table->integer('question_id')->unsigned()->nullable();
 			$table->timestamps();
-		});
-		Schema::table('alternatives', function(Blueprint $table)
-		{
-			$table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
 		});
 	}
 

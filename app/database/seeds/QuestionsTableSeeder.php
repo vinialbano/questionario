@@ -363,7 +363,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 4;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -378,7 +378,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 4;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca tomei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -391,7 +391,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 4;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca tomei')->first())->save();
 
 
         $a = Alternative::where('text','=','Menos de 30 dias')->first()->id;
@@ -406,7 +406,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 4;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -420,7 +420,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 4;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -450,7 +450,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -464,7 +464,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca tomei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não, nunca misturei com álcool')->first()->id;
@@ -478,7 +478,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -492,7 +492,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -506,7 +506,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -523,7 +523,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca fumei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca fumei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -536,7 +536,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 5;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não fumo')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não fumo')->first())->save();
 
 
         $a = Alternative::where('text','=','Não fumo')->first()->id;
@@ -564,7 +564,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 6;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -579,7 +579,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 6;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -593,7 +593,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 6;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -610,7 +610,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 6;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca experimentei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca experimentei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -623,7 +623,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 6;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca fumei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca fumei')->first())->save();
 
 
         $a = Alternative::where('text','=','Menos de 30 dias')->first()->id;
@@ -638,7 +638,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 7;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -652,7 +652,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 7;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -666,7 +666,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 7;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -683,7 +683,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 7;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca experimentei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca experimentei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -696,7 +696,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 7;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca cheirei')->first())->save();
 
 
         $a = Alternative::where('text','=','Mais de um ano')->first()->id;
@@ -711,7 +711,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 8;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -728,7 +728,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 8;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -742,7 +742,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 8;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -759,7 +759,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 8;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca tomei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -772,7 +772,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 9;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -787,7 +787,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 9;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -801,7 +801,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 9;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -818,7 +818,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 9;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca experimentei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca experimentei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -831,7 +831,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 9;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca usei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca usei')->first())->save();
 
 
         $b = Alternative::where('text','=','Menos de 30 dias')->first()->id;
@@ -846,7 +846,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -860,7 +860,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -874,7 +874,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -891,7 +891,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não cheirei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não cheirei')->first())->save();
 
 
         $a = Alternative::where('text','=','Loló/Lança')->first()->id;
@@ -910,7 +910,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca cheirei')->first())->save();
 
 
         $a = Alternative::where('text','=','Não lembro')->first()->id;
@@ -923,7 +923,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca cheirei')->first())->save();
 
 
         $a = Alternative::where('text','=','Menos de 30 dias')->first()->id;
@@ -938,7 +938,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 10;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca cheirei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca cheirei')->first())->save();
 
 
         $a = Alternative::where('text','=','Tinha em minha casa')->first()->id;
@@ -960,7 +960,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->alternatives()->sync( array( $a, $b, $c ) );
 
         $question = new Question;
-        $question->text         = 'Acredito alguém aqui deva ter doce. Você já tomou LSD ou chá de cogumelo ? ';
+        $question->text         = 'Acredito que alguém aqui deva ter doce. Você já tomou LSD ou chá de cogumelo ? ';
         $question->multianswer  = false;
         $question->allow_other   = false;
         $question->scene        = 10;
@@ -1017,7 +1017,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1030,7 +1030,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1044,7 +1044,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1061,7 +1061,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = false;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Nunca tomei')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Nunca tomei')->first())->save();
 
 
         $a = Alternative::where('text','=','Nunca tomei')->first()->id;
@@ -1090,7 +1090,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1103,7 +1103,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = true;
         $question->save();
-        $question->alternative()->save(Alternative::where('text','=','Não')->first());
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
 
         $a = Alternative::where('text','=','Não')->first()->id;
@@ -1117,6 +1117,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = false;
         $question->save();
+        $question->alternative()->associate(Alternative::where('text','=','Não')->first())->save();
 
         $a = Alternative::where('text','=','Não')->first()->id;
         $b = Alternative::where('text','=','Sim, de 1 a 5 dias no mês')->first()->id;
@@ -1132,10 +1133,10 @@ class QuestionsTableSeeder extends Seeder {
         $question->scene        = 11;
         $question->has_jump     = false;
         $question->save();
+        $question->alternative()->associate(Alternative::where('text','=','Nunca tomei')->first())->save();
 
-        $a = Alternative::where('text','=','Nunca tomei')->first()->id;
-        $b = Alternative::where('text','=','Não lembro')->first()->id;
-        $question->alternatives()->sync( array( $a, $b ) );
+        $a = Alternative::where('text','=','Não lembro')->first()->id;
+        $question->alternatives()->sync( array( $a ) );
 
         $question = new Question;
         $question->text         = 'Existem varios remédios que fazem se sentir alterado. Dentre eles estão a Morfina, Tylex, Setux, Sylador, Tramal, Dolantina, Fentanil, Dolosal, Belacodid. Você já tomou algúm desses remédios para se sentir alterado?';
@@ -1179,76 +1180,76 @@ class QuestionsTableSeeder extends Seeder {
 
 
 
-        $question           = Question::where('text', '=', 'Filho, precisamos conversar sobre um assunto muito importante que envolve a vida dos adolescentes, que é a questão do uso de drogas... Você já experimentou alguma bebida alcoólica? Como cerveja, chopp, vinho, pinga, caipirinha, sidra ou outras.')->first();
-        $question->jump_to  = Question::where('text', '=', 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?')->first()->id;
+        $question = Question::where('text', '=', 'Filho, precisamos conversar sobre um assunto muito importante que envolve a vida dos adolescentes, que é a questão do uso de drogas... Você já experimentou alguma bebida alcoólica? Como cerveja, chopp, vinho, pinga, caipirinha, sidra ou outras.')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou alguma bebida alcoólica?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você tomou alguma bebida alcoólica?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Você já comprou pessoalmente alguma bebida alcoólica, mesmo que não tenha sido para você?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'E ai, cara, tudo bem? To aqui tomando um energético para ficar mais animado. Já tomou algum? Como Red bull, Flash Power, Flying Hourse, Bad Boy, Blue Energy, Burn.')->first();
-        $question->jump_to  = Question::where('text', '=', 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?')->first()->id;
+        $question = Question::where('text', '=', 'E ai, cara, tudo bem? To aqui tomando um energético para ficar mais animado. Já tomou algum? Como Red bull, Flash Power, Flying Hourse, Bad Boy, Blue Energy, Burn.')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Você já fumou em narguile?')->first()->id;
+        $question = Question::where('text', '=', 'Daqui a pouco vou comprar um cigarro. Você já fumou cigarro?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Você já fumou em narguile?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você fumou algum cigarro?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando fumou cigarro pela primeira vez?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você fumou algum cigarro?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando fumou cigarro pela primeira vez?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Já experimentou maconha ou haxixe?')->first();
-        $question->jump_to  = Question::where('text', '=', 'E aí, você já experimentou cocaína?')->first()->id;
+        $question = Question::where('text', '=', 'Já experimentou maconha ou haxixe?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'E aí, você já experimentou cocaína?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você usou maconha?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando experimentou maconha pela primeira vez?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você usou maconha?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando experimentou maconha pela primeira vez?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'E aí, você já experimentou cocaína?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Você já tomou Artane, Bentyl, Akineton, ou Chá de Lírio para se sentir alterado ou diferente? Este Chá a galera chama de saia-branca, véu-de-noiva,trombeteira,zabumba, ou cartucho.')->first()->id;
+        $question = Question::where('text', '=', 'E aí, você já experimentou cocaína?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Você já tomou Artane, Bentyl, Akineton, ou Chá de Lírio para se sentir alterado ou diferente? Este Chá a galera chama de saia-branca, véu-de-noiva,trombeteira,zabumba, ou cartucho.')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você usou cocaína?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando experimentou cocaína pela primeira vez?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você usou cocaína?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando experimentou cocaína pela primeira vez?')->first())->save();
         $question->save();
 
         $question = Question::where('text', '=', 'Você já tomou Artane, Bentyl, Akineton, ou Chá de Lírio para se sentir alterado ou diferente? Este Chá a galera chama de saia-branca, véu-de-noiva,trombeteira,zabumba, ou cartucho.')->first();
-        $question->jump_to      = Question::where('text', '=', 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?')->first()->id;
+        $question->jumpTo()->associate(Question::where('text', '=', 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum desses?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando tomou pela primeira vez?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum desses?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando tomou pela primeira vez?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first()->id;
+        $question = Question::where('text', '=', 'Este lugar esta bem deserto... O pessoal tem usado bastante crack ultimamente. Você já experimentou Crack ou Merla?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Mas aí, você ja experimentou heroína ou ópio?')->first()->id;
+        $question = Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Mas aí, você ja experimentou heroína ou ópio?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você cheirou algum desses produtos?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Qual você cheirou por último?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você cheirou algum desses produtos?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Qual você cheirou por último?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Você já tomou algum remédio para emagrecer ou ficar acordado sem receita médica? Por exemplo Anfepramona, Femproporex, Mazindol, Hipofagin, Inibex, Desobesi, Moderine, Absten, Fagolipo, Dualid. Não considere adoçante, shake, ou chá.')->first();
-        $question->jump_to  = Question::where('text', '=', 'Você já tomou Holoten, Carpinol ou Medavane para se sentir alterado?')->first()->id;
+        $question = Question::where('text', '=', 'Você já tomou algum remédio para emagrecer ou ficar acordado sem receita médica? Por exemplo Anfepramona, Femproporex, Mazindol, Hipofagin, Inibex, Desobesi, Moderine, Absten, Fagolipo, Dualid. Não considere adoçante, shake, ou chá.')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Você já tomou Holoten, Carpinol ou Medavane para se sentir alterado?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum remédio para emagrecer ou ficar acordado sem receita médica?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado sem receita médica pela primeira vez?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum remédio para emagrecer ou ficar acordado sem receita médica?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado sem receita médica pela primeira vez?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.')->first();
-        $question->jump_to  = Question::where('text', '=', 'Existem varios remédios que fazem se sentir alterado. Dentre eles estão a Morfina, Tylex, Setux, Sylador, Tramal, Dolantina, Fentanil, Dolosal, Belacodid. Você já tomou algúm desses remédios para se sentir alterado?')->first()->id;
+        $question = Question::where('text', '=', 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Existem varios remédios que fazem se sentir alterado. Dentre eles estão a Morfina, Tylex, Setux, Sylador, Tramal, Dolantina, Fentanil, Dolosal, Belacodid. Você já tomou algúm desses remédios para se sentir alterado?')->first())->save();
         $question->save();
 
-        $question           = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum calmante sem receita médica?')->first();
-        $question->jump_to  = Question::where('text', '=', 'Que idade você tinha quando tomou algum calmante sem receita médica pela primeira vez?')->first()->id;
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você tomou algum calmante sem receita médica?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando tomou algum calmante sem receita médica pela primeira vez?')->first())->save();
         $question->save();
 
     }

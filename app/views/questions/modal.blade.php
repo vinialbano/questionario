@@ -1,18 +1,21 @@
 <div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                Adicionar Nova Opção
-            </h3>
-        </div><!-- /.box-header -->
-        <div class="panel-body">
-            {{ Form::text('text', '', array('class' => 'form-control', 'id' => 'opcao')) }}
-            {{ Form::token() }}
-        </div>
-        <div class="panel-footer">
 
-            <button type="button" class="btn btn-primary item-add"><span class="fa fa-check"></span> Salvar</button>
-            <button type="button" class="btn btn-danger modal-close"><span class="fa fa-times"></span> Cancelar</button>
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Adicionar Nova Opção
+                    </h3>
+                    </div><!-- /.box-header -->
+            <div class="panel-body">
+                {{ Form::text('text', '', array('class' => 'form-control', 'id' => 'opcao')) }}
+                {{ Form::token() }}
+            </div>
+            <div class="panel-footer">
+
+                <button type="button" class="btn btn-primary item-add"><span class="fa fa-check"></span> Salvar</button>
+                <button type="button" class="btn btn-danger modal-close"><span class="fa fa-times"></span> Cancelar</button>
+            </div>
         </div>
     </div>
 </div>

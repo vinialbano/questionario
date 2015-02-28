@@ -14,27 +14,19 @@ class Question extends Eloquent
     }
 
     public function jumpTo(){
-        return $this->hasOne('Question', 'jump_to');
+        return $this->belongsTo('Question', 'jump_to');
     }
 
     public function alternative(){
-        return $this->hasOne('Alternative');
+        return $this->belongsTo('Alternative');
     }
 
     public function getNext(){
-        $next = Question::where('scene', '=', $this->scene)->where('id', '>', $this->id)->first();
-        if($next == null) {
-            $next = Question::where('scene', '=', $this->scene + 1)->first();
-        }
-        return $next;
+        return Question::find($this->id + 1);
     }
 
     public function getPrevious(){
-        $previous = Question::where('scene', '=', $this->scene)->where('id', '<', $this->id)->orderBy('id', 'desc')->first();
-        if($previous == null) {
-            $previous = Question::where('scene', '=', $this->scene - 1)->orderBy('id', 'desc')->first();
-        }
-        return $previous;
+        return Question::find($this->id - 1);
     }
 
 }

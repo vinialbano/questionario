@@ -9,12 +9,8 @@
         {{ Form::open(array('route' => array('admin.questions.update' , $question->id ) , 'method' => 'put')) }}
         <div class="box-body">
             <div class="form-group">
-                {{ Form::label('text', 'Enunciado no Relatório') }}
+                {{ Form::label('text', 'Enunciado da Questão') }}
                 {{ Form::textArea('text', $question->text, array('class' => 'form-control', 'rows' => '2')) }}
-            </div>
-            <div class="form-group">
-                {{ Form::label('display_text', 'Enunciado no Questionário') }}
-                {{ Form::textArea('display_text', $question->display_text, array('class' => 'form-control', 'rows' => '2')) }}
             </div>
             <div class="checkbox">
                 <label>
@@ -23,7 +19,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    {{ Form::checkbox('allow_other', 'Permite Outros', $question->allow_others) }} Permite Outros
+                    {{ Form::checkbox('allow_other', 'Permite Outros', $question->allow_other )}} Permite Outros
                 </label>
             </div>
             <div class="form-group">

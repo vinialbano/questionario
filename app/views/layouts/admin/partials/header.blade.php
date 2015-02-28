@@ -31,7 +31,7 @@
                         <!-- Menu Body -->
                         <li class="user-body">
                             <div class="col-xs-12 text-center">
-                                <a href="{{{ URL::to('users/logout') }}}"><span class="fa fa-sign-out"></span> Logout</a>
+                                <a href="{{{ URL::to('logout') }}}"><span class="fa fa-sign-out"></span> Logout</a>
                             </div>
                         </li>
                     </ul>

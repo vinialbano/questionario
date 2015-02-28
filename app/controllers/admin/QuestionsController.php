@@ -78,7 +78,7 @@ class QuestionsController extends BaseController {
 
 	public function getData()
 	{
-		$questions = Question::select(array('id', 'text', 'display_text', 'multianswer', 'allow_other', 'other_text'));
+		$questions = Question::select(array('id', 'text', 'multianswer', 'allow_other', 'other_text'));
 
 		return Datatables::of($questions)
 		->add_column('actions', '

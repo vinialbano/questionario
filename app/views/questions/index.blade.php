@@ -18,7 +18,6 @@
                 <tr role="row">
                     <th class="col-md-1">{{{ Lang::get('admin/questions/table.id') }}}</th>
                     <th class="col-md-3">{{{ Lang::get('admin/questions/table.text') }}}</th>
-                    <th class="col-md-3">{{{ Lang::get('admin/questions/table.display_text') }}}</th>
                     <th class="col-md-1">{{{ Lang::get('admin/questions/table.multianswer') }}}</th>
                     <th class="col-md-1">{{{ Lang::get('admin/questions/table.allow_other') }}}</th>
                     <th class="col-md-2">{{{ Lang::get('admin/questions/table.other_text') }}}</th>
