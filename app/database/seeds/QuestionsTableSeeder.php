@@ -192,7 +192,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->alternatives()->sync( array( $a, $b, $c, $d, $e ) );
 
         $question = new Question;
-        $question->text         = 'Na sua casa tem algum empregado que trabalhe todos os dias?';
+        $question->text         = 'Na sua casa tem algum empregado que trabalhe todos os dias para sua família?';
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text   = "Adicionar outra quantidade";
@@ -960,7 +960,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->alternatives()->sync( array( $a, $b, $c ) );
 
         $question = new Question;
-        $question->text         = 'Acredito que alguém aqui deva ter doce. Você já tomou LSD ou chá de cogumelo ? ';
+        $question->text         = 'Acredito que alguém aqui deva ter mais alguma coisa diferente. Você já tomou LSD ou chá de cogumelo? ';
         $question->multianswer  = false;
         $question->allow_other   = false;
         $question->scene        = 10;
@@ -1083,7 +1083,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->alternatives()->sync( array( $a, $b, $c, $d ) );
 
         $question = new Question;
-        $question->text         = 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.';
+        $question->text         = 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpax, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.';
         $question->multianswer  = false;
         $question->allow_other  = true;
         $question->other_text   = "Adicionar tranquilizante";
@@ -1244,7 +1244,7 @@ class QuestionsTableSeeder extends Seeder {
         $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando tomou algum remédio para emagrecer ou ficar acordado sem receita médica pela primeira vez?')->first())->save();
         $question->save();
 
-        $question = Question::where('text', '=', 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpaz, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.')->first();
+        $question = Question::where('text', '=', 'Você já tomou algum calmante sem receita médica? Por exemplo o Diazepam, Dienpax, Valium, Lorax, Rohypnol, Psicosedin, Somalium, Apraz, Rivotril, Alprazolam, Lexotan, Dalmadorm, Dormonid, Bromazepam, Frontal, Olcadil. Não considere chás nem produtos naturais como maracugina.')->first();
         $question->jumpTo()->associate(Question::where('text', '=', 'Existem varios remédios que fazem se sentir alterado. Dentre eles estão a Morfina, Tylex, Setux, Sylador, Tramal, Dolantina, Fentanil, Dolosal, Belacodid. Você já tomou algúm desses remédios para se sentir alterado?')->first())->save();
         $question->save();
 

@@ -19,8 +19,11 @@ class AnswersController extends BaseController {
 			//Vivem juntos
 			if($answers[0] == 35){
 				//Tem que ter os dois
-				if (! (in_array(29, $questions[2][1]) && in_array(30, $questions[2][1]))) {
-					return Redirect::back()->withErrors('Sua resposta é inválida devido ter afirmado não morar com um dos pais.');
+				if (in_array(29, $questions[2][1]) && !(in_array(30, $questions[2][1]))) {
+					return Redirect::back()->withErrors('Sua resposta é inválida devido ter afirmado teus pais viverem juntos e você só morar com seu pai.');
+				}
+				if (!(in_array(29, $questions[2][1])) && in_array(30, $questions[2][1])) {
+					return Redirect::back()->withErrors('Sua resposta é inválida devido ter afirmado teus pais viverem juntos e você só morar com sua mãe');
 				}
 			}
 			//Vivem separados ou alguém morreu

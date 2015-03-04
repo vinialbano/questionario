@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="row clearfix">
-                <div class="col-md-12 column">
+                <div class="col-md-12 column" id="errors">
                     @if($errors->any())
                     <div class="alert alert-danger">
                         <strong>Aviso!</strong> {{$errors->first()}}
@@ -40,7 +40,7 @@
                         <a class="list-group-item active">Opções</a>
                         <div id="origem">
                             @foreach($question->alternatives()->get() as $alternative)
-                            <div class="list-group-item" title="{{{ $alternative->id }}}">{{ $alternative->text }}</div>
+                            <div class="list-group-item" title="{{{ $alternative->id }}}" onmouseover="this.setAttribute('org_title', this.title); this.removeAttribute('title');" onmouseout="this.setAttribute('title', this.getAttribute('org_title'));">{{ $alternative->text }}</div>
                             @endforeach
                         </div>
                         @if($question->allow_other)
@@ -81,26 +81,10 @@
 $('.ajax-popup-link').magnificPopup({
     type: 'ajax',
     modal: 'true'
-
-    // other options
 });
 
 var multianswer = {{ $question->multianswer }};
 var url = "{{ URL::route('answers.store') }}";
-
-function trocaPadding(){
-    if($("#origem").children().length == 0){
-        $('#origem').css("padding", "20px 0");
-    } else {
-        $('#origem').css("padding", "0");
-    }
-
-    if($("#destino").children().length == 0){
-        $('#destino').css("padding", "20px 0");
-    } else {
-        $('#destino').css("padding", "0");
-    }
-}
 
 // Origem
 Sortable.create(origem, {
@@ -130,7 +114,7 @@ Sortable.create(destino, {
 (function($) {
     $(window).load(function () {
         // retrieved this line of code from http://dimsemenov.com/plugins/magnific-popup/documentation.html#api
-        @if($question->id == 5 || $question->id == 21 || $question->id == 28 || $question->id == 41 || $question->id == 50 || $question->id == 55 || $question->id == 67)
+        @if(in_array($question->id, [5, 21, 28, 41, 50, 55, 67]))
         $.magnificPopup.open({
             items: {
                 src: "{{{URL::route('questions.apresentacao', $question->id)}}}"

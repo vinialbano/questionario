@@ -71,15 +71,6 @@ module.exports = function(grunt) {
                 }],
             }
         },
-        phpunit: {
-            classes: {
-                dir: 'app/tests/'   //location of the tests
-            },
-            options: {
-                bin: 'vendor/bin/phpunit',
-                colors: true
-            }
-        },
         watch: {
             js: {
                 files: ['<%= paths.dev.js %>*.js','<%= paths.js %>**/*.js'],   //arquivos monitorados
@@ -94,15 +85,6 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true                        //atualiza o navegador
                 }
-            },
-            tests: {
-                files: ['app/controllers/*.php','app/models/*.php'],  //a tarefa vai ser executada só quando salvar arquivo nessa localização
-                tasks: ['phpunit']
-            }
-        },
-        wiredep: {
-            target: {
-                src: 'app/views/**/*.blade.php' // point to your HTML file.
             }
         }
     });
@@ -112,9 +94,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-phpunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-wiredep');
 
     // Task definition
     grunt.registerTask('default', ['watch']);
