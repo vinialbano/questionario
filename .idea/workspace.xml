@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7ae7425-d4d7-413c-b239-d6d827be9d59" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/AnswersController.php" afterPath="$PROJECT_DIR$/app/controllers/admin/AnswersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2015_02_05_163203_create_comments_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2015_02_05_163203_create_comments_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="questionario.iws" />
@@ -34,11 +34,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="AnswersController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/controllers/admin/AnswersController.php">
+          <file leaf-file-name="2015_02_05_163203_create_comments_table.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_05_163203_create_comments_table.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33717278" vertical-offset="115" max-vertical-offset="1242">
-                  <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+                <state vertical-scroll-proportion="0.4671875" vertical-offset="0" max-vertical-offset="874">
+                  <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
@@ -51,7 +51,7 @@
           <file leaf-file-name="Comment.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/Comment.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="955">
+                <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="736">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
@@ -89,6 +89,7 @@
         <option value="$PROJECT_DIR$/app/controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/app/views/comments/create.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/admin/AnswersController.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_05_163203_create_comments_table.php" />
       </list>
     </option>
   </component>
@@ -334,7 +335,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,11 +353,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -470,7 +471,7 @@
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32964823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -520,13 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/apresentacao.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1656">
-          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1058" max-vertical-offset="47679">
@@ -829,25 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_27_165651_create_questions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19267015" vertical-offset="0" max-vertical-offset="1173">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <marker date="1424884488484" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
-            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="981">
@@ -1059,8 +1034,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/admin/AnswersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33717278" vertical-offset="115" max-vertical-offset="1242">
+        <state vertical-scroll-proportion="0.5135566" vertical-offset="115" max-vertical-offset="1242">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <marker date="1427134564922" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427134564922" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_01_27_165651_create_questions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20095694" vertical-offset="58" max-vertical-offset="1173">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <marker date="1424884488484" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1424884488484" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_05_163203_create_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4671875" vertical-offset="0" max-vertical-offset="874">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
           <folding />
         </state>
       </provider>
