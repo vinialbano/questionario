@@ -15,7 +15,7 @@
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <div class="well">
-                            <h4 class="glow in tlt text-center">{{ nl2br($question->text) }}</h4>
+                            <h4 class="glow in text-center">{{ nl2br($question->text) }}</h4>
                         </div>
                     </div>
                 </div>
@@ -133,11 +133,6 @@ $(document).ready(function(){
     $("#proximo").click(function(event){
         event.preventDefault();
         verifica();
-    });
-
-    $('.tlt').textillate({
-        in: { effect: 'fadeIn' },
-        initialDelay: 500
     });
 
     trocaPadding();

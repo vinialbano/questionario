@@ -127,6 +127,7 @@ return array(
 		'Zizaco\Confide\ServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Bllim\Datatables\DatatablesServiceProvider',
+        'Maatwebsite\Excel\ExcelServiceProvider',
 
 	),
 
@@ -202,6 +203,7 @@ return array(
 		'String'          	=> 'Andrew13\Helpers\String',
 		'Carbon'          	=> 'Carbon\Carbon',
 		'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
 
 	),
 

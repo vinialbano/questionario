@@ -25,10 +25,6 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
 
-            <li {{ (Request::is('admin') ? 'class="active"' : '') }}>
-                <a href="{{{ URL::route('admin.dashboard.index') }}}"><span class="fa fa-pie-chart"></span> Estatísticas</a>
-            </li>
-
             <li {{ (Request::is('admin/comments*') ? 'class="active"' : '') }}>
                 <a href="{{{ URL::route('admin.comments.index') }}}"><span class="fa fa-comments"></span> Comentários</a>
             </li>
@@ -38,7 +34,7 @@
             </li>
 
             <li {{ (Request::is('admin/answers*') ? 'class="active"' : '') }}>
-                <a href="{{{ URL::route('admin.answers.index') }}}"><span class="fa fa-exclamation"></span> Respostas</a>
+                <a href="{{{ URL::route('admin.answers.export') }}}"><span class="fa fa-exclamation"></span> Respostas</a>
             </li>
 
 

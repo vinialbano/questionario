@@ -64,7 +64,7 @@ public function getLogin()
 {
     if (Confide::user()) {
         if ( Entrust::hasRole('admin')){
-            return Redirect::route('admin.dashboard.index');
+            return Redirect::route('admin.comments.index');
         } else if ( Entrust::hasRole('aluno') ||  Entrust::hasRole('teste')){
             return Redirect::route('apresentacao');
         }
@@ -85,7 +85,7 @@ public function postLogin()
 
     if ($repo->login($input)) {
         if ( Entrust::hasRole('admin')){
-            return Redirect::route('admin.dashboard.index');
+            return Redirect::route('admin.comments.index');
         } else if ( Entrust::hasRole('aluno') ||  Entrust::hasRole('teste')){
             return Redirect::route('apresentacao');
         }

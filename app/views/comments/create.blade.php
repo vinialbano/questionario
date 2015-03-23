@@ -15,7 +15,7 @@
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <div class="well">
-                            <h4 class="glow in tlt text-center">Você gostaria de fazer algum comentário?</h4>
+                            <h4 class="glow in text-center">Você gostaria de fazer algum comentário?</h4>
                         </div>
                     </div>
                 </div>
@@ -32,17 +32,4 @@
         </div>
     </div>
 </div>
-@stop
-
-@section('scripts')
-<script type="text/javascript">
-$(document).ready(function(){
-
-    $('.tlt').textillate({
-        in: { effect: 'fadeIn' },
-        initialDelay: 500
-    });
-
-});
-</script>
 @stop

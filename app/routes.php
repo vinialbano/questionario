@@ -39,7 +39,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth', 'namespace' => 'Admi
 {
 	# Answer Management
 	Route::group(array('prefix' => 'answers'), function(){
-		Route::get('/',	array('uses' => 'AnswersController@index',	'as' => 'admin.answers.index'));
+		Route::get('/',	array('uses' => 'AnswersController@exportAnswers',	'as' => 'admin.answers.export'));
 	});
 
 	# Comment Management
@@ -56,7 +56,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth', 'namespace' => 'Admi
 	});
 
 	# Admin Dashboard
-	Route::get('/',	array('uses' => 'DashboardController@index',	'as' => 'admin.dashboard.index'));
 	Route::controller('comments', 'CommentsController');
 
 });
