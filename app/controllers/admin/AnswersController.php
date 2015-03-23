@@ -17,11 +17,14 @@ class AnswersController extends BaseController {
 
     public function exportAnswers(){
         $answers = $this->model->all();
+        $quests = \Question::all();
         $questions = array();
+        foreach($quests as $quest){
+            $question = $quest->text;
+            array_push($questions,$question);
+        }
         $alternatives = array();
         foreach($answers as $answer){
-            $question = $answer->question->text;
-            array_push($questions,$question);
             $alts = $answer->alternatives;
             $alts2 = "";
             foreach($alts as $alt){
