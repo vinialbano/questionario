@@ -33,7 +33,7 @@ $(document).ready( function(){
                 "_token": $('input[name=_token]').val()
             },
             function(data){
-                parent.$('#origem').append('<div class="list-group-item" title=' + data.id + '>' + data.text + '</div>');
+                parent.$('#origem').append('<div class="list-group-item" data-id=' + data.id + '>' + data.text + '</div>');
                 parent.trocaPadding();
                 parent.$.magnificPopup.close();
             }

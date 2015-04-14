@@ -1228,6 +1228,10 @@ class QuestionsTableSeeder extends Seeder {
         $question->jumpTo()->associate(Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first())->save();
         $question->save();
 
+        $question = Question::where('text', '=', 'Nos últimos 12 meses você usou crack ou merla?')->first();
+        $question->jumpTo()->associate(Question::where('text', '=', 'Que idade você tinha quando experimentou crack ou merla pela primeira vez?')->first())->save();
+        $question->save();
+
         $question = Question::where('text', '=', 'Aposto que ainda tem muitas coisas aqui nesta festa. Tipo, você ja cheirou algum produto para se sentir alterado? Não cocaína, mas outros como loló, lança, cola, éter, removedor de tinta, gasolina, benzina, acetona, tíner, esmalte, aguarrás ou tinta?')->first();
         $question->jumpTo()->associate(Question::where('text', '=', 'Mas aí, você ja experimentou heroína ou ópio?')->first())->save();
         $question->save();

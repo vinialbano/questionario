@@ -49,6 +49,7 @@ class AnswersController extends BaseController {
 		}
 		//Se possui, substitui
 		if ($achou){
+
 			if(!$questaoAtual->has_jump){
 				$questions[$bottom] = [Input::get('question'), $answers];
 			} else {

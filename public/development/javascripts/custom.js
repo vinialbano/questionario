@@ -3,7 +3,7 @@ function getConteudo() {
     var ids = new Array();
 
     $("#destino").children().each(function(){
-        ids.push(this.title);
+        ids.push($(this).data("id"));
     });
 
     return ids;

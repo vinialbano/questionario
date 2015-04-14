@@ -40,7 +40,7 @@
                         <a class="list-group-item active">Opções</a>
                         <div id="origem">
                             @foreach($question->alternatives()->get() as $alternative)
-                            <div class="list-group-item" title="{{{ $alternative->id }}}" onmouseover="this.setAttribute('org_title', this.title); this.removeAttribute('title');" onmouseout="this.setAttribute('title', this.getAttribute('org_title'));">{{ $alternative->text }}</div>
+                            <div class="list-group-item" data-id="{{{ $alternative->id }}}">{{ $alternative->text }}</div>
                             @endforeach
                         </div>
                         @if($question->allow_other)
