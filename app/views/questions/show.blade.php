@@ -125,7 +125,7 @@ Sortable.create(destino, {
 (function($) {
     $(window).load(function () {
         // retrieved this line of code from http://dimsemenov.com/plugins/magnific-popup/documentation.html#api
-        @if(in_array($question->id, [5, 21, 28, 41, 50, 55, 67]))
+        @if(in_array($question->id, [5, 19, 26, 39, 48, 53, 65]))
         $.magnificPopup.open({
             items: {
                 src: "{{{URL::route('questions.apresentacao', $question->id)}}}"
