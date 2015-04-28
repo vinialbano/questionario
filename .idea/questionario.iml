@@ -2,6 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/public/vendor/Sortable/meteor/example/.meteor/local" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bllim/datatables" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/classpreloader/classpreloader" />
@@ -133,5 +134,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="questionario node_modules" level="project" />
   </component>
 </module>

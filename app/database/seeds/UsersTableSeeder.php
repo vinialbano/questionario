@@ -15,21 +15,21 @@ class UsersTableSeeder extends Seeder {
                 'confirmation_code' => md5(microtime().Config::get('app.key')),
                 'created_at'        => new DateTime,
                 'updated_at'        => new DateTime,
-            ),
-            array(
-                'username'          => 'Teste',
-                'email'             => 'teste@example.org',
-                'password'          => Hash::make('teste'),
-                'confirmed'         => 1,
-                'confirmation_code' => md5(microtime().Config::get('app.key')),
-                'created_at'        => new DateTime,
-                'updated_at'        => new DateTime,
             )
+//            array(
+//                'username'          => 'Teste',
+//                'email'             => 'teste@example.org',
+//                'password'          => Hash::make('teste'),
+//                'confirmed'         => 1,
+//                'confirmation_code' => md5(microtime().Config::get('app.key')),
+//                'created_at'        => new DateTime,
+//                'updated_at'        => new DateTime,
+//            )
         );
 
         DB::table('users')->insert( $users );
         $users = array();
-        for ($i = 1; $i <= 150; $i++){
+        for ($i = 1; $i <= 170; $i++){
             array_push($users,
                 array(
                     'username'          => 'Aluno' . sprintf('%03d', $i),

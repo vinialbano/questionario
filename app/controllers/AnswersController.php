@@ -97,7 +97,7 @@ class AnswersController extends BaseController {
 
 		//Verifica se o questionário está completo
 		$completo = true;
-		for ($id = 1; $id <= 77; $id++){
+		for ($id = 1; $id <= 75; $id++){
 
 			$top = sizeof($questions) - 1;
 			$bottom = 0;

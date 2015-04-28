@@ -15,7 +15,18 @@
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <div class="well">
-                            <h4 class="glow in text-center">{{ nl2br($question->text) }}</h4>
+                            @if($question->has_image)
+                                <div class="row clearfix">
+                                    <div class="col-md-4 column">
+                                        {{ HTML::image($question->image, '', array('class' => 'img-responsive')) }}
+                                    </div>
+                                    <div class="col-md-8 column">
+                                        <h4 class="glow in text-center">{{ nl2br($question->text) }}</h4>
+                                    </div>
+                                </div>
+                            @else
+                                <h4 class="glow in text-center">{{ nl2br($question->text) }}</h4>
+                            @endif
                         </div>
                     </div>
                 </div>

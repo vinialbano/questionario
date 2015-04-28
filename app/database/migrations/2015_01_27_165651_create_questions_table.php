@@ -20,9 +20,11 @@ class CreateQuestionsTable extends Migration {
 			$table->boolean('allow_other');
 			$table->string('other_text')->nullable();
 			$table->integer('scene')->unsigned();
-			$table->boolean('has_jump');
+			$table->boolean('has_jump')->default(false);
 			$table->integer('alternative_id')->unsigned()->nullable();
 			$table->integer('jump_to')->unsigned()->nullable();
+            $table->boolean('has_image')->default(false);
+            $table->text('image');
 			$table->timestamps();
 		});
 		Schema::table('questions', function(Blueprint $table)
