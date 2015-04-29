@@ -33,7 +33,7 @@ class AnswersController extends BaseController {
             $alts2 = rtrim($alts2, ", ");
             array_push($alternatives, $alts2);
         }
-        $alternatives = array_chunk($alternatives, 77);
+        $alternatives = array_chunk($alternatives, 75);
         //dd($alternatives);
         return \Excel::create('Respostas' . \Carbon::now()->formatLocalized('%d-%m-%Y'), function($excel) use($questions, $alternatives){
            $excel->sheet('Respostas', function($sheet) use($questions, $alternatives) {
