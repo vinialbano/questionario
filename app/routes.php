@@ -55,6 +55,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth', 'namespace' => 'Admi
 		Route::get('/data', 			array('uses' => 'QuestionsController@getData',	'as' => 'admin.questions.data'));
 	});
 
+    # User Management
+    Route::get('users/', array('uses' => 'UsersController@create', 'as' => 'admin.users.create'));
+    Route::post('users/', array('uses' => 'UsersController@store', 'as' => 'admin.users.store'));
+
 	# Admin Dashboard
 	Route::controller('comments', 'CommentsController');
 

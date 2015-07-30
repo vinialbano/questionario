@@ -29,7 +29,7 @@ class UsersTableSeeder extends Seeder {
 
         DB::table('users')->insert( $users );
         $users = array();
-        for ($i = 1; $i <= 170; $i++){
+        for ($i = 1; $i <= 350; $i++){
             array_push($users,
                 array(
                     'username'          => 'Aluno' . sprintf('%03d', $i),

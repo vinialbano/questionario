@@ -33,6 +33,10 @@
                 <a href="{{{ URL::route('admin.questions.index') }}}"><span class="fa fa-question"></span> Questões</a>
             </li>
 
+            <li {{ (Request::is('admin/users*') ? 'class="active"' : '') }}>
+                <a href="{{{ URL::route('admin.users.create') }}}"><span class="fa fa-user"></span> Cadastrar Usuário</a>
+            </li>
+
             <li {{ (Request::is('admin/answers*') ? 'class="active"' : '') }}>
                 <a href="{{{ URL::route('admin.answers.export') }}}"><span class="fa fa-exclamation"></span> Respostas</a>
             </li>

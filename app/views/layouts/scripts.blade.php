@@ -2,8 +2,6 @@
 {{ HTML::script('vendor/jquery/dist/jquery.min.js') }}
 <!-- JQuery UI 1.11.2 -->
 {{ HTML::script('vendor/jquery-ui/jquery-ui.min.js') }}
-<!-- Bootstrap 3.3.3 -->
-{{-- HTML::script('vendor/bootstrap-sass/assets/javascripts/bootstrap.min.js') --}}
 <!-- JQuery Knob 1.2.11 -->
 {{ HTML::script('vendor/jquery-knob/dist/jquery.knob.min.js') }}
 <!-- JQuery iCheck 1.0.2 -->

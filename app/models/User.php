@@ -12,4 +12,5 @@ class User extends Eloquent implements ConfideUserInterface
     use ConfideUser;
 
     protected $dates = ['deleted_at'];
+    protected $fillable = [];
 }

@@ -9,10 +9,10 @@ class AnswersController extends BaseController {
 
     protected $model;
 
-    public function __construct(Answer $answer)
+    public function __construct(Answer $user)
     {
         parent::__construct();
-        $this->model = $answer;
+        $this->model = $user;
     }
 
     public function exportAnswers(){

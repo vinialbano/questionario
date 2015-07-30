@@ -203,7 +203,7 @@ return array(
 		'String'          	=> 'Andrew13\Helpers\String',
 		'Carbon'          	=> 'Carbon\Carbon',
 		'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
-        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Excel'             => 'Maatwebsite\Excel\Facades\Excel',
 
 	),
 
