@@ -14,7 +14,7 @@ Home :: @parent
                 </div>
                 <div class="jumbotron-contents">
                     <div class="row">
-                        <h1 class="text-center">Questionário Interativo</h1>
+                        <h1 class="text-center">SIAUD - Sistema Interativo para Avaliação do Uso de Drogas</h1>
                         <p>
                             Esta é uma maneira interativa para responder um questionário sobre o uso de álcool e outras drogas entre adolescentes de uma escola pública.
                         </p>

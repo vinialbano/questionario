@@ -9,23 +9,33 @@ class PermissionsTableSeeder extends Seeder {
         $permissions = array(
             array( // 1
                 'name'         => 'manage_questions',
-                'display_name' => 'manage questions'
+                'display_name' => 'manage questions',
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
             ),
             array( // 2
                 'name'         => 'manage_alternatives',
-                'display_name' => 'manage alternatives'
+                'display_name' => 'manage alternatives',
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
             ),
             array( // 3
                 'name'         => 'manage_users',
-                'display_name' => 'manage users'
+                'display_name' => 'manage users',
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
             ),
             array( // 4
                 'name'         => 'manage_roles',
-                'display_name' => 'manage roles'
+                'display_name' => 'manage roles',
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
             ),
             array( // 5
                 'name'         => 'post_answer',
-                'display_name' => 'post answer'
+                'display_name' => 'post answer',
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
             ),
         );
 
@@ -53,7 +63,7 @@ class PermissionsTableSeeder extends Seeder {
             ),
             array(
                 'role_id'       => $role_id_admin,
-                'permission_id' => $permission_base + 4
+            'permission_id' => $permission_base + 4
             ),
             array(
                 'role_id'       => $role_id_teste,

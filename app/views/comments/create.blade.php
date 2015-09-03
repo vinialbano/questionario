@@ -26,7 +26,7 @@
                 {{ Form::textarea('comment', '', array('class' => 'form-control', 'rows' => '3', 'placeholder' => 'Escreva aqui!')) }}
             </div>
             <div class="form-group pull-right">
-                <button name="submit" type="submit" class="btn btn-success btn-lg"><i class="fa fa-check-circle-o"></i> Enviar</button>
+                <button name="submit" type="submit" onclick="document.body.style.cursor='progress'" class="btn btn-success btn-lg"><i class="fa fa-check-circle-o"></i> Enviar</button>
             </div>
             {{ Form::close() }}
         </div>

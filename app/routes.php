@@ -59,6 +59,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth', 'namespace' => 'Admi
     Route::get('users/', array('uses' => 'UsersController@create', 'as' => 'admin.users.create'));
     Route::post('users/', array('uses' => 'UsersController@store', 'as' => 'admin.users.store'));
 
+	# Database Reset
+	Route::post('database-reset/', array('uses' => 'DashboardController@resetDatabase', 'as' => 'admin.dashboard.reset'));
+
 	# Admin Dashboard
 	Route::controller('comments', 'CommentsController');
 

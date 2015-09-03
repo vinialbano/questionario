@@ -24,7 +24,7 @@ class CreateQuestionsTable extends Migration {
 			$table->integer('alternative_id')->unsigned()->nullable();
 			$table->integer('jump_to')->unsigned()->nullable();
             $table->boolean('has_image')->default(false);
-            $table->text('image');
+            $table->text('image')->nullable();
 			$table->timestamps();
 		});
 		Schema::table('questions', function(Blueprint $table)

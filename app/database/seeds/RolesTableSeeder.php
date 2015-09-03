@@ -24,7 +24,7 @@ class RolesTableSeeder extends Seeder {
 //        $user = User::where('username','=','teste')->first();
 //        $user->attachRole( $testeRole );
 
-        for ($i = 1; $i<=170; $i++){
+        for ($i = 1; $i<=350; $i++){
             $user = User::where('username','=','Aluno' . sprintf('%03d', $i))->first();
             $user->attachRole( $alunoRole );
         }
